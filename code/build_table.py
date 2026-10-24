@@ -109,6 +109,47 @@ def category_of(resource_id, recs):
 
 
 RULES = {r["data_category"]: r for r in read_csv("deletion_rules.csv")}
+REQUEST_FILES = ("deletion_requests.csv", "sample_deletion_requests.csv")
+
+
+def resolve_run_accounts(ids, owners, account_deletes):
+    """Assign deleted accounts that no evidence names, by elimination across all requests.
+
+    A deleted account leaves only its DELETE_RECORD row, submitted by the deletion run
+    40-75 min before reported_at. Runs are batched, so each window holds several deletes;
+    every delete belongs to at most one request, and accounts evidence ties to a user are
+    taken. Repeatedly assign a request whose window has exactly one delete left.
+    Returns ({case_id: (account, activity_id)}, {case_id: [remaining candidates]}).
+    """
+    taken = {rid for rid, links in owners.items() if rid.startswith("account_") and links}
+    by_account = {a["resource_id"]: a for a in account_deletes}
+    windows = {}
+    for name in REQUEST_FILES:
+        for req in read_csv(name):
+            uid, _ = ids.resolve_email(req["email"])
+            if uid is None or any(rid.startswith("account_") and any(o == uid for o, _, _ in links)
+                                  for rid, links in owners.items()):
+                continue
+            rep_at = ts(req["reported_at"])
+            windows[req["case_id"]] = {
+                a["resource_id"] for a in account_deletes
+                if -RUN_WINDOW_MIN * 60 <= (ts(a["event_time"]) - rep_at).total_seconds() <= 10 * 60
+            } - taken
+    assigned = {}
+    changed = True
+    while changed:
+        changed = False
+        used = set(assigned.values())
+        for case_id, window in windows.items():
+            left = window - used
+            if case_id not in assigned and len(left) == 1:
+                assigned[case_id] = left.pop()
+                used.add(assigned[case_id])
+                changed = True
+    resolved = {c: (rid, by_account[rid]["activity_id"]) for c, rid in assigned.items()}
+    used = set(assigned.values())
+    remaining = {c: sorted(w - used) for c, w in windows.items() if c not in assigned}
+    return resolved, remaining
 
 
 def main(requests_file="deletion_requests.csv"):
@@ -146,6 +187,7 @@ def main(requests_file="deletion_requests.csv"):
 
     account_deletes = [a for a in activity if a["event_type"] == "DELETE_RECORD"
                        and a["target_system"] == "account_service"]
+    run_accounts, candidates = resolve_run_accounts(ids, owners, account_deletes)
     rows = []
     for req in read_csv(requests_file):
         uid, kind = ids.resolve_email(req["email"])
@@ -160,17 +202,11 @@ def main(requests_file="deletion_requests.csv"):
                     mine[rid].add(via)
         account_candidates = []
         if uid and not any(r.startswith("account_") for r in mine):
-            # no evidence names the account: the deletion run submits it shortly before
-            # reported_at; accept only an unambiguous candidate no other user owns
-            rep_at = ts(req["reported_at"])
-            account_candidates = sorted({
-                a["resource_id"] for a in account_deletes
-                if -RUN_WINDOW_MIN * 60 <= (ts(a["event_time"]) - rep_at).total_seconds() <= 10 * 60
-                and not any(o != uid for o, _, _ in owners.get(a["resource_id"], []))})
-            if len(account_candidates) == 1:
-                rid = account_candidates[0]
-                act_id = next(a["activity_id"] for a in account_deletes if a["resource_id"] == rid)
-                mine[rid].add(f"deletion_run@{act_id}")
+            resolved = run_accounts.get(req["case_id"])
+            if resolved:
+                mine[resolved[0]].add(f"deletion_run@{resolved[1]}")
+            else:
+                account_candidates = candidates.get(req["case_id"], [])
 
         for rid in sorted(mine):
             system = system_of(rid)
