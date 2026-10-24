@@ -1,6 +1,6 @@
 ## Manual spot check of test-set answers
 
-The 518 test cases have no public answers, so 16 of them were audited by hand. Cases were
+The 518 test cases have no public answers, so 22 of them were audited by hand. Cases were
 picked with a fixed seed from each risky group: non-deletion requests, screenshot-anchored
 cases, deleted accounts placed by timing, requests made with an old email, and random
 COMPLETE / INCOMPLETE cases. For each case an independent script (not the pipeline's parser
@@ -28,7 +28,16 @@ reading that evidence.
 | case_417 | INCOMPLETE | 03-25 syslog 1 min before audit: search hit and account lookup returning the profile | correct |
 | case_140 | INCOMPLETE | 08-12 export at audit time: account NOT_FOUND; analytics IDENTIFIABLE, connector ACTIVE, search and support present | correct |
 
-Result: deletion status judged correct in 16/16; steps judged fully correct in 13/16; the other
+| case_218 | COMPLETE | 07-03 inventory 17 min before audit: audit record retained, account absent; a later log shows the account 404 at 07:58 | correct |
+| case_380 | COMPLETE | 04-14 trace: account 404, audit record retained | correct |
+| case_455 | INCOMPLETE | 03-05 replica dump at audit time: search document with name and email, support attachment uploaded by the subject; run log shows both deletions failed | correct; timing-placed account followed by the subject's own run events |
+| case_466 | INCOMPLETE | 02-28 export 24 min before audit: search hit for the subject's old email | correct |
+| case_72 | INCOMPLETE | 09-16 inventory 23 min before audit: export still owned by the subject's email; run marked its deletion PARTIAL | correct |
+| case_534 | NOT_APPLICABLE | "Please stop the promotional emails ... I am not asking for deletion" | correct |
+
+A second seeded draw (seed 2026, 6 cases not seen before) was checked the same way after the final
+run. Result over all 22 cases: deletion status judged correct in 22/22; steps judged fully correct
+in 19/22; the other
 three carry the known limits (an account no evidence names, an account placed by timing, a
 check resting on omission). This is an independent reading of the evidence, not the hidden
 answer key.
