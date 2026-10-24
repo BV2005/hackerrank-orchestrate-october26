@@ -35,6 +35,7 @@ CATEGORY_BY_PREFIX = {
 }
 TRUE = {True, 1, "1", "true", "True"}
 RUN_WINDOW_MIN = 80  # account delete lands 40-75 min before reported_at in the samples
+RUN_GAP_S = 6680  # median account-delete -> first linked follow-up gap, evidence-linked cases
 
 
 def ts(value):
@@ -152,6 +153,21 @@ def resolve_run_accounts(ids, owners, account_deletes):
     return resolved, remaining
 
 
+def guess_account(candidates, mine, worker_times, by_account):
+    """Best time-based guess among ambiguous run-window account deletes.
+
+    The deletion run reaches the user's other resources about RUN_GAP_S after the
+    account delete, so prefer the candidate whose gap to the first linked follow-up is
+    closest to that; with no follow-up, take the earliest delete. Measured on cases
+    whose account evidence does name: 48% and 38% correct, against ~33% by chance.
+    """
+    follow = sorted(t for rid in mine if not rid.startswith("account_") for t in worker_times.get(rid, []))
+    when = {rid: ts(by_account[rid]["event_time"]) for rid in candidates}
+    if follow:
+        return min(candidates, key=lambda r: abs((follow[0] - when[r]).total_seconds() - RUN_GAP_S))
+    return min(candidates, key=lambda r: when[r])
+
+
 def main(requests_file="deletion_requests.csv"):
     ids = Identities(DATASET)
     records, coverage, skipped = load_evidence(DATASET)
@@ -188,6 +204,12 @@ def main(requests_file="deletion_requests.csv"):
     account_deletes = [a for a in activity if a["event_type"] == "DELETE_RECORD"
                        and a["target_system"] == "account_service"]
     run_accounts, candidates = resolve_run_accounts(ids, owners, account_deletes)
+    by_account = {a["resource_id"]: a for a in account_deletes}
+    worker_times = defaultdict(list)
+    for a in activity:
+        if a["source_system"] == "deletion_worker":
+            worker_times[a["resource_id"]].append(ts(a["event_time"]))
+    guessed = set()
     rows = []
     for req in read_csv(requests_file):
         uid, kind = ids.resolve_email(req["email"])
@@ -207,6 +229,12 @@ def main(requests_file="deletion_requests.csv"):
                 mine[resolved[0]].add(f"deletion_run@{resolved[1]}")
             else:
                 account_candidates = candidates.get(req["case_id"], [])
+                # one delete belongs to one request: skip accounts already guessed for another
+                open_candidates = [r for r in account_candidates if r not in guessed] or account_candidates
+                if open_candidates:
+                    guess = guess_account(open_candidates, mine, worker_times, by_account)
+                    guessed.add(guess)
+                    mine[guess].add(f"time_guess@{by_account[guess]['activity_id']}")
 
         for rid in sorted(mine):
             system = system_of(rid)
