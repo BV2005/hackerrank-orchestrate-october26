@@ -152,9 +152,11 @@ def main(requests_file="deletion_requests.csv"):
         user = ids.users.get(uid, {})
         cutoff = req["audit_at"]
         mine = defaultdict(set)
+        # ownership is a static fact, so later evidence may establish it; only the
+        # observed state below is restricted to evidence captured by audit_at
         for rid, links in owners.items():
             for owner, when, via in links:
-                if owner == uid and when <= cutoff:
+                if owner == uid:
                     mine[rid].add(via)
         account_candidates = []
         if uid and not any(r.startswith("account_") for r in mine):
@@ -183,13 +185,15 @@ def main(requests_file="deletion_requests.csv"):
             latest = [o for o in explicit if o[0] == explicit[-1][0]]
             # within the latest capture any surviving copy (e.g. a replica) wins over absence
             pick = next((o for o in latest if not o[3].startswith("ABSENT")), latest[0]) if latest else None
+            category = category_of(rid, recs)
+            rule = RULES.get(category, {})
+            if pick and pick[2] == "omitted" and rule.get("required_action") == "RETAIN":
+                pick = None  # scoped dumps omitting a retained record do not prove it was deleted
             # catalog link rows are ownership facts, not claims about the resource's state
             cl = sorted((a for a in claims.get(rid, []) if a["event_time"] <= cutoff
                          and a["event_type"] != "LINK_RESOURCE_IDENTITY"),
                         key=lambda a: a["event_time"])
             last = cl[-1] if cl else {}
-            category = category_of(rid, recs)
-            rule = RULES.get(category, {})
             rows.append({
                 "case_id": req["case_id"], "request_email": req["email"], "email_kind": kind,
                 "user_id": uid, "user_name": user.get("name"), "current_email": user.get("email"),
