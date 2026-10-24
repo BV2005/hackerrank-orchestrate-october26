@@ -1,3 +1,5 @@
 .venv/
 artifacts/
 __pycache__/
+# API keys live here; never commit it
+.env

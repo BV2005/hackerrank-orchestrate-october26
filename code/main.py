@@ -9,9 +9,14 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+from datetime import datetime, timezone
+
+import vision
 from build_table import DATASET, ROOT, build_rows, read_csv
-from intent import classify
+from intent import decide
+from llm import configured
 from steps import case_steps
+from usage_report import write_usage_report
 from validate import validate
 
 
@@ -19,11 +24,13 @@ def case_number(case_id):
     return int(case_id.rsplit("_", 1)[1])
 
 
-def audit(requests):
-    """case_id -> (deletion_status, steps, intent) for the given request dicts."""
-    intents = {r["case_id"]: classify(r["request_text"]) for r in requests}
-    # 'uncertain' has no model confirmation yet (milestone M6); the dataset is a deletion
-    # workflow, so an unmatched request is audited as a deletion and flagged
+def audit(requests, run_id=None):
+    """case_id -> (deletion_status, steps, intent) for the given request dicts.
+
+    intent is (decision, reason, source): rules, the model for requests the rules cannot
+    place, or a deletion default when no model is configured.
+    """
+    intents = decide(requests, run_id)
     deletion = [r for r in requests if intents[r["case_id"]][0] != "not_deletion"]
     rows, _ = build_rows(deletion)
     by_case = defaultdict(list)
@@ -51,7 +58,10 @@ def write_output(answers, path):
 
 def main(requests_file="deletion_requests.csv", output_file=None):
     requests = read_csv(requests_file)
-    answers = audit(requests)
+    run_id = datetime.now(timezone.utc).strftime("run-%Y%m%dT%H%M%SZ")
+    if configured():
+        vision.extract(run_id)  # cached per image: free after the first run
+    answers = audit(requests, run_id)
     captured = {r["file_id"]: r["captured_at"] for r in read_csv("evidence_files.csv")}
     warnings = validate({c: a[:2] for c, a in answers.items()}, requests, captured)
     for w in warnings:
@@ -62,6 +72,8 @@ def main(requests_file="deletion_requests.csv", output_file=None):
     for status, _, _ in answers.values():
         counts[status] += 1
     print(f"wrote {len(answers)} rows to {out}: {dict(counts)}")
+    if requests_file == "deletion_requests.csv" and output_file is None:
+        print(write_usage_report(run_id, len(requests)))
 
 
 if __name__ == "__main__":
