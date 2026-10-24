@@ -36,6 +36,7 @@ CATEGORY_BY_PREFIX = {
 TRUE = {True, 1, "1", "true", "True"}
 RUN_WINDOW_MIN = 80  # account delete lands 40-75 min before reported_at in the samples
 RUN_GAP_S = 6680  # median account-delete -> first linked follow-up gap, evidence-linked cases
+RUN_STEPS_S = (390, 449)  # spacing between successful policy actions inside one run
 
 
 def ts(value):
@@ -153,6 +154,55 @@ def resolve_run_accounts(ids, owners, account_deletes):
     return resolved, remaining
 
 
+def resolve_run_analytics(ids, owners, activity, worker_times):
+    """Link anonymized analytics records, which keep no identifier, through their run.
+
+    A deletion run whose policy actions succeed anonymizes analytics ~28 min before
+    reported_at and then works through the user's other resources at a steady 390 or 449 s
+    rhythm. Runs share windows, so: (1) take the candidate that sits one rhythm step before
+    one of the user's linked run events; (2) otherwise assign a leftover candidate only if
+    exactly one eligible request wants it. Requests whose linked run events all come after
+    reported_at belong to failed runs, which anonymize after the report, and are skipped.
+    Returns {case_id: (analytics_id, activity_id)}.
+    """
+    user_res = defaultdict(set)
+    for rid, links in owners.items():
+        for uid, _, _ in links:
+            user_res[uid].add(rid)
+    events = [a for a in activity if a["source_system"] == "deletion_worker"
+              and a["target_system"] == "analytics_platform" and a["event_type"] == "ANONYMIZE_RECORD"
+              and not owners.get(a["resource_id"])]
+    rhythm_hits, windows = {}, {}
+    for name in REQUEST_FILES:
+        for req in read_csv(name):
+            uid, _ = ids.resolve_email(req["email"])
+            if uid is None or any(r.startswith("analytics_") for r in user_res[uid]):
+                continue
+            rep_at = ts(req["reported_at"])
+            window = {a["resource_id"]: ts(a["event_time"]) for a in events
+                      if -35 * 60 <= (ts(a["event_time"]) - rep_at).total_seconds() <= -20 * 60}
+            linked = sorted(t for r in user_res[uid] if not r.startswith("account_") for t in worker_times.get(r, []))
+            pre_report = [t for t in linked if -35 * 60 <= (t - rep_at).total_seconds() <= 0]
+            if linked and not pre_report:
+                continue  # failed run: nothing was anonymized before the report
+            step = [r for r, t in window.items()
+                    if any(abs((lt - t).total_seconds() - s) <= 10 for lt in pre_report for s in RUN_STEPS_S)]
+            if len(step) == 1:
+                rhythm_hits[req["case_id"]] = step[0]
+            elif window:
+                windows[req["case_id"]] = set(window)
+    used = set(rhythm_hits.values())
+    demand = defaultdict(list)
+    for case_id, window in windows.items():
+        left = window - used
+        if len(left) == 1:
+            demand[next(iter(left))].append(case_id)
+    assigned = dict(rhythm_hits)
+    assigned.update({cases[0]: rid for rid, cases in demand.items() if len(cases) == 1})
+    by_id = {a["resource_id"]: a["activity_id"] for a in events}
+    return {c: (rid, by_id[rid]) for c, rid in assigned.items()}
+
+
 def guess_account(candidates, mine, worker_times, by_account):
     """Best time-based guess among ambiguous run-window account deletes.
 
@@ -209,6 +259,7 @@ def main(requests_file="deletion_requests.csv"):
     for a in activity:
         if a["source_system"] == "deletion_worker":
             worker_times[a["resource_id"]].append(ts(a["event_time"]))
+    run_analytics = resolve_run_analytics(ids, owners, activity, worker_times)
     guessed = set()
     rows = []
     for req in read_csv(requests_file):
@@ -235,6 +286,13 @@ def main(requests_file="deletion_requests.csv"):
                     guess = guess_account(open_candidates, mine, worker_times, by_account)
                     guessed.add(guess)
                     mine[guess].add(f"time_guess@{by_account[guess]['activity_id']}")
+        if req["case_id"] in run_analytics:
+            rid, act_id = run_analytics[req["case_id"]]
+            mine[rid].add(f"deletion_run@{act_id}")
+        # object storage ids are the stored file behind a support attachment; the support
+        # record is what policy treats, so the storage copy is not reported separately
+        for rid in [r for r in mine if r.startswith("object_")]:
+            del mine[rid]
 
         for rid in sorted(mine):
             system = system_of(rid)
@@ -283,7 +341,7 @@ def main(requests_file="deletion_requests.csv"):
         w.writeheader()
         w.writerows(rows)
     cases = {r["case_id"] for r in rows}
-    print(f"{len(rows)} rows for {len(cases)} cases; images skipped (no OCR yet): {len(skipped)}")
+    print(f"{len(rows)} rows for {len(cases)} cases; images without extraction: {len(skipped)}")
 
 
 if __name__ == "__main__":

@@ -9,6 +9,7 @@ import json
 import re
 import sqlite3
 from collections import defaultdict
+from pathlib import Path
 
 RES_RE = re.compile(
     r"\b(?:account|search|analytics|support|export|data_flow|backup|audit_record|"
@@ -190,18 +191,41 @@ def parse_pdf(path, fid, captured):
 
 PARSERS = {".sql": parse_sql, ".json": parse_json, ".log": parse_log,
            ".txt": parse_handover, ".pdf": parse_pdf}
+IMAGE_EXTRACTIONS = Path(__file__).resolve().parent / "image_extractions"
+
+
+def load_image_extractions():
+    """file_id -> extracted screenshot records; a model extractor's output wins over
+    the reference transcription when both describe the same file."""
+    found = {}
+    for path in sorted(IMAGE_EXTRACTIONS.glob("*.json"), key=lambda p: p.name != "reference_transcription.json"):
+        for fid, entry in json.loads(path.read_text(encoding="utf-8")).items():
+            if not fid.startswith("_"):
+                found[fid] = entry
+    return found
+
+
+def parse_image(entry, fid, captured):
+    records = [_rec(fid, captured, f"image:{entry['producer']}", dict(r))
+               for r in entry["records"] if r.get("resource_id")]
+    return records, {}
 
 
 def load_evidence(dataset):
     """Return (records, coverage, skipped) for every manifest file."""
     records, coverage, skipped = [], {}, []
+    images = load_image_extractions()
     with open(dataset / "evidence_files.csv", encoding="utf-8") as f:
         manifest = list(csv.DictReader(f))
     for row in manifest:
         path = dataset / row["file_path"]
+        if row["file_id"] in images:
+            recs, cov = parse_image(images[row["file_id"]], row["file_id"], row["captured_at"])
+            records += recs
+            continue
         parser = PARSERS.get(path.suffix)
         if parser is None:
-            skipped.append(row["file_id"])  # images: need a vision/OCR step
+            skipped.append(row["file_id"])  # images with no extraction yet
             continue
         recs, cov = parser(path, row["file_id"], row["captured_at"])
         records += recs

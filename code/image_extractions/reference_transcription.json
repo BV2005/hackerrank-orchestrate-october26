@@ -1,0 +1,94 @@
+{
+  "_about": "Facts read from the 11 PNG screenshots under dataset/evidence/images by Claude Code (claude-opus-5-5) in the development session on 2026-10-24, by viewing each image. Not produced by an API call: it is the reference used to score the automated image extractor, and the pipeline's fallback when no extractor output exists. Field names follow the parsed-evidence schema (result, email, phone, full_name, customer_reference, subject_reference). resource_id is null when the screen does not show one; such rows are kept for completeness but cannot be linked.",
+  "evidence_04": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Customer Operations - customer profile, Haruka Sato",
+    "records": [
+      {"resource_id": "account_5762", "result": "FOUND", "full_name": "Haruka Sato", "email": "haruka.s1838@zoho.com", "phone": "+81 90 7610 2507", "customer_reference": "user_11", "note": "live profile page: signup mobile_app, market JP, last contact 24 Sep 2026 09:14 JST, member since 12 Jan 2024, orders ORD-20265762 and ORD-20265518; customer details also list support CS-8538 / support_9538 (created 28 Aug, customer replied 24 Sep), but the ticket's contents are not shown, so no state is recorded for it"}
+    ]
+  },
+  "evidence_09": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Search Console - customer_directory_v3, query email:g.silva76@gmail.com, executed 01 Sep 2026 06:00:14 UTC",
+    "records": [
+      {"resource_id": "search_428", "result": "FOUND", "full_name": "Gabriel Silva", "email": "g.silva76@gmail.com", "customer_reference": "user_13", "note": "score 9.84, indexed_at 2026-09-01T05:58:21Z"},
+      {"resource_id": "search_1874", "result": "FOUND", "email": "g.silva76.jr@gmail.com", "note": "no display name or customer reference, score 4.12, indexed 05:55:03 UTC"}
+    ]
+  },
+  "evidence_14": {
+    "producer": "claude-code-session-transcription",
+    "screen": "BridgeOps - connector topology, PRODUCTION eu-west, 07 Aug 2026 08:00 UTC",
+    "records": [
+      {"resource_id": "data_flow_1121", "result": "ACTIVE", "subject_selector": "jain.aditi@gmail.com", "note": "destination customer_analytics_warehouse, continuous sync, 1,284 events/hour, status Healthy, last response 200 OK, 124 events delivered 07:59:42"},
+      {"resource_id": "data_flow_9846", "result": "ACTIVE", "subject_selector": "lucia-torres@gmail.com", "note": "destination customer_analytics_warehouse, continuous, 842 events/hour, last contact 07:59:36"}
+    ]
+  },
+  "evidence_19": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Pulse Analytics - user profile, last 90 days",
+    "records": [
+      {"resource_id": "analytics_7438", "result": "IDENTIFIABLE", "full_name": "Omar Darwish", "email": "darwish.omar@icloud.com", "customer_reference": "user_20", "note": "12 sessions, 19 products viewed, 2 orders, revenue USD 167.42, market AE, last activity 13 Jul 2026 14:22 UTC"}
+    ]
+  },
+  "evidence_23": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Customer Download Center - data exports",
+    "records": [
+      {"resource_id": "export_1261", "result": "FOUND", "email": "marcus.lee@northstar.shop", "note": "customer_export_1261.zip, Collecting, created 20 Jun 14:18 UTC"},
+      {"resource_id": "export_1260", "result": "FOUND", "email": "ingrid.dahl@outlook.com", "note": "customer_export_1260.zip, Ready for download, created 18 Jun 2026 06:42 UTC, expires 25 Jun 2026 06:42 UTC, 18.4 MB, download count 0, includes profile, orders, saved addresses"},
+      {"resource_id": "export_1259", "result": "FOUND", "email": "sara.kim@northstar.shop", "note": "customer_export_1259.zip, Packaging, created 17 Jun 11:03 UTC"},
+      {"resource_id": "export_1258", "result": "FOUND", "email": "daniel.park@northstar.shop", "note": "customer_export_1258.zip, Ready, created 16 Jun 09:27 UTC"}
+    ]
+  },
+  "evidence_28": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Helpline Console - ticket CS-5034 'Where is my delivery?'",
+    "records": [
+      {"resource_id": "support_1034", "result": "FOUND", "full_name": "Kofi Agyeman", "email": "kagyeman8947@fastmail.com", "note": "assigned agent Maya Chen, order ORD-20265034 (running shoes, in transit, SwiftShip SWF-884103, expected 26 May 2026); conversation between the customer, a bot and the agent"}
+    ]
+  },
+  "evidence_32": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Vault Recovery Manager - customer-platform weekly archives",
+    "records": [
+      {"resource_id": "backup_9291", "result": "FOUND", "email": "bluepeakco@outlook.com", "note": "ap-southeast-1, created 26 Apr 02:00, 102.3 GB, AES-256, tier Archive"},
+      {"resource_id": "backup_9288", "result": "FOUND", "email": "miller.logistics@company.com", "note": "us-west-2, created 26 Apr 02:00, 67.1 GB, tier Archive"},
+      {"resource_id": "backup_9287", "result": "FOUND", "email": "areed1433@gmail.com", "note": "eu-west-1, path s3://northstar-backups/customer-platform/weekly/segment-42-20260426.tar.zst, 84.7 GB, checksum verified, last drill 29 Mar 2026, retention end 26 Jul 2026; no restore block shown on the screen, and sibling archives backup_9286 / backup_9281 were restored on 25 / 24 Apr"},
+      {"resource_id": "backup_9286", "result": "FOUND", "email": "summit-retail@company.com", "note": "us-east-1, created 26 Apr 02:00, 91.4 GB; restored 25 Apr (completed)"}
+    ]
+  },
+  "evidence_37": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Sentinel - account events, subject filter user_03, 18-26 Aug 2026 UTC, 6 signed events, 0 integrity failures, partition 2026-Q3",
+    "records": [
+      {"resource_id": "audit_record_003", "result": "FOUND", "subject_reference": "user_03", "note": "25 Aug 04:03 account closure recorded, automated workflow, integrity valid, fingerprint 8f0c...31ad"},
+      {"resource_id": "audit_record_002", "result": "FOUND", "subject_reference": "user_03", "note": "25 Aug 03:21 session revoked, security system, valid"},
+      {"resource_id": "audit_record_001", "result": "FOUND", "subject_reference": "user_03", "note": "24 Aug 16:14 recovery challenge completed, user (self), valid"},
+      {"resource_id": "audit_record_006", "result": "FOUND", "subject_reference": "user_03", "note": "22 Aug 11:27 email change confirmed, user (self), valid"},
+      {"resource_id": "audit_record_005", "result": "FOUND", "subject_reference": "user_03", "note": "20 Aug 09:42 login from new device, user (self), valid"},
+      {"resource_id": "audit_record_004", "result": "FOUND", "subject_reference": "user_03", "note": "18 Aug 14:05 password changed, user (self), valid"}
+    ]
+  },
+  "evidence_42": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Customer Reference Registry - user_17, 'Retained reference', customer key, Account Platform eu-west",
+    "records": [
+      {"resource_id": null, "result": "REDACTED", "subject_reference": "user_17", "note": "no name, email or phone shown; created 11 Jan 2024, most recent update 10 Mar 2026 07:18 UTC; active links to ORD-20263245, CS-3245, CS-3378, FIN-7742. The screen shows no resource id (system_activity activity_4011 calls this reference tombstone_17)"}
+    ]
+  },
+  "evidence_46": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Nimbus Object Storage - northstar-customer-data, eu-west-1/support-attachments/2026/02, captured 13 Feb 2026 08:00 UTC",
+    "records": [
+      {"resource_id": null, "result": "FOUND", "note": "delivery_confirmation_19.pdf, 684 KB, v3, uploader support-service, modified 12 Feb 18:42 (created 18:38)"},
+      {"resource_id": null, "result": "FOUND", "note": "delivery_confirmation_20.pdf, return_label_4821.pdf, return_label_4876.pdf, invoice_NS-10493.pdf, parcel_damage_7713.jpg, customer_export_2026-02-10.zip, customer_export_2026-02-12.zip"}
+    ]
+  },
+  "evidence_60": {
+    "producer": "claude-code-session-transcription",
+    "screen": "Audience Operations - marketing profile, status Live",
+    "records": [
+      {"resource_id": "marketing_001", "result": "FOUND", "full_name": "Soo-jin Park", "email": "sj.park@naver.com", "phone": "+82 10-5837-9451", "note": "market South Korea, email opt-in yes, SMS opt-in no, last refreshed 15 Sep 2026 23:40 UTC, audience Returning customers - East Asia"}
+    ]
+  }
+}
