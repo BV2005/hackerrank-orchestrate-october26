@@ -1,0 +1,264 @@
+{
+ "task": "intent",
+ "model": "gemini/gemini-3.6-flash",
+ "usage": {
+  "input_tokens": 2879,
+  "output_tokens": 2688,
+  "total_tokens": 5567,
+  "seconds": 18.52
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_483",
+    "decision": "deletion",
+    "reason": "The user explicitly requests the permanent deletion of their account."
+   },
+   {
+    "case_id": "case_484",
+    "decision": "deletion",
+    "reason": "The user explicitly requests account deletion."
+   },
+   {
+    "case_id": "case_485",
+    "decision": "deletion",
+    "reason": "The user requests account closure and deletion of associated personal data."
+   },
+   {
+    "case_id": "case_486",
+    "decision": "deletion",
+    "reason": "The user explicitly requests account deletion."
+   },
+   {
+    "case_id": "case_487",
+    "decision": "deletion",
+    "reason": "The user asks to start the account deletion process."
+   },
+   {
+    "case_id": "case_488",
+    "decision": "deletion",
+    "reason": "The user requests erasure of their account."
+   },
+   {
+    "case_id": "case_489",
+    "decision": "deletion",
+    "reason": "The user requests deletion of their account and personal data."
+   },
+   {
+    "case_id": "case_490",
+    "decision": "deletion",
+    "reason": "The user requests account closure and personal data deletion."
+   },
+   {
+    "case_id": "case_491",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion."
+   },
+   {
+    "case_id": "case_492",
+    "decision": "deletion",
+    "reason": "The user explicitly requests deletion of their account."
+   },
+   {
+    "case_id": "case_493",
+    "decision": "deletion",
+    "reason": "The user requests account erasure."
+   },
+   {
+    "case_id": "case_494",
+    "decision": "deletion",
+    "reason": "The user explicitly requests account deletion."
+   },
+   {
+    "case_id": "case_495",
+    "decision": "deletion",
+    "reason": "The user explicitly requests permanent deletion of their account."
+   },
+   {
+    "case_id": "case_496",
+    "decision": "deletion",
+    "reason": "The user requests erasure of their account."
+   },
+   {
+    "case_id": "case_497",
+    "decision": "deletion",
+    "reason": "The user explicitly requests account deletion."
+   },
+   {
+    "case_id": "case_498",
+    "decision": "deletion",
+    "reason": "The user explicitly requests permanent deletion of their account."
+   },
+   {
+    "case_id": "case_499",
+    "decision": "deletion",
+    "reason": "The user requests erasure of their account."
+   },
+   {
+    "case_id": "case_500",
+    "decision": "deletion",
+    "reason": "The user asks for the removal of their account and personal information."
+   },
+   {
+    "case_id": "case_501",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion."
+   },
+   {
+    "case_id": "case_502",
+    "decision": "deletion",
+    "reason": "The user requests deletion of their account and personal data."
+   },
+   {
+    "case_id": "case_503",
+    "decision": "deletion",
+    "reason": "The user requests deletion of their account and personal data."
+   },
+   {
+    "case_id": "case_504",
+    "decision": "deletion",
+    "reason": "The user requests deletion of their account and personal data."
+   },
+   {
+    "case_id": "case_505",
+    "decision": "deletion",
+    "reason": "The user asks to begin the account deletion process."
+   },
+   {
+    "case_id": "case_506",
+    "decision": "deletion",
+    "reason": "The user requests deletion of their account and personal data."
+   },
+   {
+    "case_id": "case_507",
+    "decision": "deletion",
+    "reason": "The user requests complete deletion of their account."
+   },
+   {
+    "case_id": "case_508",
+    "decision": "deletion",
+    "reason": "The user asks to remove their account and associated personal data."
+   },
+   {
+    "case_id": "case_509",
+    "decision": "deletion",
+    "reason": "The user requests account closure and deletion of personal data."
+   },
+   {
+    "case_id": "case_510",
+    "decision": "deletion",
+    "reason": "The user asks to permanently delete their account."
+   },
+   {
+    "case_id": "case_511",
+    "decision": "deletion",
+    "reason": "The user requests the start of the account deletion process."
+   },
+   {
+    "case_id": "case_512",
+    "decision": "deletion",
+    "reason": "The user requests account erasure."
+   },
+   {
+    "case_id": "case_513",
+    "decision": "deletion",
+    "reason": "The user requests definitive deletion of their account."
+   },
+   {
+    "case_id": "case_514",
+    "decision": "deletion",
+    "reason": "The user requests the start of the account deletion process."
+   },
+   {
+    "case_id": "case_515",
+    "decision": "deletion",
+    "reason": "The user requests erasure of their account."
+   },
+   {
+    "case_id": "case_516",
+    "decision": "deletion",
+    "reason": "The user requests the removal of their account and personal data."
+   },
+   {
+    "case_id": "case_517",
+    "decision": "deletion",
+    "reason": "The user explicitly requests account deletion."
+   },
+   {
+    "case_id": "case_518",
+    "decision": "deletion",
+    "reason": "The user requests deletion of their account and personal data."
+   },
+   {
+    "case_id": "case_519",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion."
+   },
+   {
+    "case_id": "case_520",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion."
+   },
+   {
+    "case_id": "case_521",
+    "decision": "deletion",
+    "reason": "The user requests deletion of their account and personal data."
+   },
+   {
+    "case_id": "case_522",
+    "decision": "deletion",
+    "reason": "The user explicitly requests permanent account deletion."
+   },
+   {
+    "case_id": "case_523",
+    "decision": "deletion",
+    "reason": "The user requests erasure of their account."
+   },
+   {
+    "case_id": "case_524",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion."
+   },
+   {
+    "case_id": "case_525",
+    "decision": "deletion",
+    "reason": "The user requests account erasure."
+   },
+   {
+    "case_id": "case_526",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion."
+   },
+   {
+    "case_id": "case_527",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion."
+   },
+   {
+    "case_id": "case_528",
+    "decision": "deletion",
+    "reason": "The user requests account erasure."
+   },
+   {
+    "case_id": "case_529",
+    "decision": "deletion",
+    "reason": "The user requests deletion of their account and personal data."
+   },
+   {
+    "case_id": "case_530",
+    "decision": "deletion",
+    "reason": "The user requests permanent deletion of their account."
+   },
+   {
+    "case_id": "case_531",
+    "decision": "deletion",
+    "reason": "The user requests account erasure."
+   },
+   {
+    "case_id": "case_532",
+    "decision": "deletion",
+    "reason": "The user asks to remove their account and personal data."
+   }
+  ]
+ }
+}

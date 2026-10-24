@@ -1,0 +1,264 @@
+{
+ "task": "intent",
+ "model": "gemini/gemini-3.6-flash",
+ "usage": {
+  "input_tokens": 2778,
+  "output_tokens": 3562,
+  "total_tokens": 6340,
+  "seconds": 15.57
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_33",
+    "decision": "deletion",
+    "reason": "The user explicitly requests account closure and personal data deletion."
+   },
+   {
+    "case_id": "case_34",
+    "decision": "deletion",
+    "reason": "The user requests the erasure of the account associated with their email address."
+   },
+   {
+    "case_id": "case_35",
+    "decision": "deletion",
+    "reason": "The user asks to close their account and process personal data deletion."
+   },
+   {
+    "case_id": "case_36",
+    "decision": "deletion",
+    "reason": "The user asks for account closure and deletion of associated personal data."
+   },
+   {
+    "case_id": "case_37",
+    "decision": "deletion",
+    "reason": "The user requests account closure and deletion of personal data across systems."
+   },
+   {
+    "case_id": "case_38",
+    "decision": "deletion",
+    "reason": "The user asks for a permanent account deletion request to be processed."
+   },
+   {
+    "case_id": "case_39",
+    "decision": "deletion",
+    "reason": "The user requests the erasure of the account linked to their email address."
+   },
+   {
+    "case_id": "case_40",
+    "decision": "deletion",
+    "reason": "The user requests the deletion of the account registered to their email address."
+   },
+   {
+    "case_id": "case_41",
+    "decision": "deletion",
+    "reason": "The user explicitly asks to erase the account linked to their email."
+   },
+   {
+    "case_id": "case_42",
+    "decision": "deletion",
+    "reason": "The user submits a request to delete the account and its personal data."
+   },
+   {
+    "case_id": "case_43",
+    "decision": "deletion",
+    "reason": "The user asks for the removal of their account and linked personal information."
+   },
+   {
+    "case_id": "case_44",
+    "decision": "deletion",
+    "reason": "The user asks to process a permanent account deletion for their email address."
+   },
+   {
+    "case_id": "case_45",
+    "decision": "deletion",
+    "reason": "The user requests permanent deletion of an unused account."
+   },
+   {
+    "case_id": "case_46",
+    "decision": "deletion",
+    "reason": "The user requests deletion of the account registered to their email address."
+   },
+   {
+    "case_id": "case_47",
+    "decision": "deletion",
+    "reason": "The user asks to close the account and delete all associated personal data."
+   },
+   {
+    "case_id": "case_48",
+    "decision": "deletion",
+    "reason": "The user requests the erasure of the account linked to their email."
+   },
+   {
+    "case_id": "case_49",
+    "decision": "deletion",
+    "reason": "The user asks for permanent deletion of their account across systems."
+   },
+   {
+    "case_id": "case_50",
+    "decision": "deletion",
+    "reason": "The user asks to treat the message as a request for permanent account deletion."
+   },
+   {
+    "case_id": "case_51",
+    "decision": "deletion",
+    "reason": "The user requests deletion of the account registered to their email address."
+   },
+   {
+    "case_id": "case_52",
+    "decision": "deletion",
+    "reason": "The user asks to remove their account and linked personal information."
+   },
+   {
+    "case_id": "case_53",
+    "decision": "deletion",
+    "reason": "The user requests erasure of the account linked to their email address."
+   },
+   {
+    "case_id": "case_54",
+    "decision": "deletion",
+    "reason": "The user requests permanent deletion of the account in Portuguese."
+   },
+   {
+    "case_id": "case_55",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion including linked identifiers."
+   },
+   {
+    "case_id": "case_56",
+    "decision": "deletion",
+    "reason": "The user asks to treat the message as a request for permanent account deletion."
+   },
+   {
+    "case_id": "case_57",
+    "decision": "deletion",
+    "reason": "The user explicitly requests permanent account deletion."
+   },
+   {
+    "case_id": "case_58",
+    "decision": "deletion",
+    "reason": "The user requests that the account associated with their address be erased."
+   },
+   {
+    "case_id": "case_59",
+    "decision": "deletion",
+    "reason": "The user asks for removal of their account and linked personal information."
+   },
+   {
+    "case_id": "case_60",
+    "decision": "deletion",
+    "reason": "The user submits a request to delete the account and its personal data."
+   },
+   {
+    "case_id": "case_61",
+    "decision": "deletion",
+    "reason": "The user explicitly requests permanent account deletion."
+   },
+   {
+    "case_id": "case_62",
+    "decision": "deletion",
+    "reason": "The user asks to erase the account linked to their email address."
+   },
+   {
+    "case_id": "case_63",
+    "decision": "deletion",
+    "reason": "The user requests permanent deletion of the account associated with their email."
+   },
+   {
+    "case_id": "case_64",
+    "decision": "deletion",
+    "reason": "The user asks to delete their account and personal data."
+   },
+   {
+    "case_id": "case_65",
+    "decision": "deletion",
+    "reason": "The user asks to begin the deletion process for their account."
+   },
+   {
+    "case_id": "case_66",
+    "decision": "deletion",
+    "reason": "The user requests permanent deletion of the account in Korean."
+   },
+   {
+    "case_id": "case_67",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion across all policy systems."
+   },
+   {
+    "case_id": "case_68",
+    "decision": "deletion",
+    "reason": "The user requests permanent deletion of the account linked to their email."
+   },
+   {
+    "case_id": "case_69",
+    "decision": "deletion",
+    "reason": "The user requests permanent deletion of the account in Spanish."
+   },
+   {
+    "case_id": "case_70",
+    "decision": "deletion",
+    "reason": "The user asks for permanent deletion of an unused account."
+   },
+   {
+    "case_id": "case_71",
+    "decision": "deletion",
+    "reason": "The user asks for deletion of the account registered to their email address."
+   },
+   {
+    "case_id": "case_72",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion."
+   },
+   {
+    "case_id": "case_73",
+    "decision": "deletion",
+    "reason": "The user requests permanent deletion of the account associated with their email."
+   },
+   {
+    "case_id": "case_74",
+    "decision": "deletion",
+    "reason": "The user asks to process a permanent account-deletion request."
+   },
+   {
+    "case_id": "case_75",
+    "decision": "deletion",
+    "reason": "The user submits a request to delete their account and personal data."
+   },
+   {
+    "case_id": "case_76",
+    "decision": "deletion",
+    "reason": "The user asks to remove their account and the personal information linked to it."
+   },
+   {
+    "case_id": "case_77",
+    "decision": "deletion",
+    "reason": "The user asks for the removal of their account and linked personal information."
+   },
+   {
+    "case_id": "case_78",
+    "decision": "deletion",
+    "reason": "The user requests complete deletion of the account in Japanese."
+   },
+   {
+    "case_id": "case_79",
+    "decision": "deletion",
+    "reason": "The user requests permanent account deletion for their email address."
+   },
+   {
+    "case_id": "case_80",
+    "decision": "deletion",
+    "reason": "The user asks for permanent deletion of their account."
+   },
+   {
+    "case_id": "case_81",
+    "decision": "deletion",
+    "reason": "The user requests deletion of their account and personal data."
+   },
+   {
+    "case_id": "case_82",
+    "decision": "deletion",
+    "reason": "The user asks to begin the deletion process for the account linked to their email."
+   }
+  ]
+ }
+}

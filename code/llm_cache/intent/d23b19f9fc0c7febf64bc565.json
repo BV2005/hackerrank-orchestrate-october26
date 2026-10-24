@@ -1,0 +1,19 @@
+{
+ "task": "intent",
+ "model": "gemini/gemini-3.6-flash",
+ "usage": {
+  "input_tokens": 156,
+  "output_tokens": 266,
+  "total_tokens": 422,
+  "seconds": 2.89
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_11",
+    "decision": "not_deletion",
+    "reason": "The user is requesting to be removed from marketing lists only and wants to keep their account."
+   }
+  ]
+ }
+}

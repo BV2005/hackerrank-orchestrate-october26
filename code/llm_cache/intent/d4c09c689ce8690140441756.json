@@ -1,0 +1,104 @@
+{
+ "task": "intent",
+ "model": "gemini/gemini-3.6-flash",
+ "usage": {
+  "input_tokens": 956,
+  "output_tokens": 1221,
+  "total_tokens": 2177,
+  "seconds": 22.29
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_533",
+    "decision": "not_deletion",
+    "reason": "The user is requesting to update their phone number and keep the account active."
+   },
+   {
+    "case_id": "case_534",
+    "decision": "not_deletion",
+    "reason": "The user is asking to opt out of promotional emails while retaining their account."
+   },
+   {
+    "case_id": "case_535",
+    "decision": "not_deletion",
+    "reason": "The user is asking to export/download their account data, not delete the account."
+   },
+   {
+    "case_id": "case_536",
+    "decision": "not_deletion",
+    "reason": "The user is asking for login reset assistance."
+   },
+   {
+    "case_id": "case_537",
+    "decision": "not_deletion",
+    "reason": "The user is requesting a correction to their misspelled surname."
+   },
+   {
+    "case_id": "case_538",
+    "decision": "not_deletion",
+    "reason": "The user is requesting to be removed from marketing lists only."
+   },
+   {
+    "case_id": "case_539",
+    "decision": "not_deletion",
+    "reason": "The user is making a data access request to know what personal information is held."
+   },
+   {
+    "case_id": "case_540",
+    "decision": "not_deletion",
+    "reason": "The user is requesting a copy of past invoices."
+   },
+   {
+    "case_id": "case_541",
+    "decision": "not_deletion",
+    "reason": "The user is requesting an update to their email address."
+   },
+   {
+    "case_id": "case_542",
+    "decision": "not_deletion",
+    "reason": "The user is asking for a copy of their account information without deleting anything."
+   },
+   {
+    "case_id": "case_543",
+    "decision": "deletion",
+    "reason": "The user is explicitly requesting permanent deletion of their account."
+   },
+   {
+    "case_id": "case_544",
+    "decision": "deletion",
+    "reason": "The user is requesting to begin the account deletion process."
+   },
+   {
+    "case_id": "case_545",
+    "decision": "deletion",
+    "reason": "The user is requesting permanent account deletion."
+   },
+   {
+    "case_id": "case_546",
+    "decision": "deletion",
+    "reason": "The user is asking for permanent account deletion in Portuguese."
+   },
+   {
+    "case_id": "case_547",
+    "decision": "deletion",
+    "reason": "The user is requesting permanent deletion of their account."
+   },
+   {
+    "case_id": "case_548",
+    "decision": "deletion",
+    "reason": "The user is asking to permanently delete their account."
+   },
+   {
+    "case_id": "case_549",
+    "decision": "deletion",
+    "reason": "The user is requesting permanent account deletion."
+   },
+   {
+    "case_id": "case_550",
+    "decision": "deletion",
+    "reason": "The user is requesting to begin the account deletion process."
+   }
+  ]
+ }
+}

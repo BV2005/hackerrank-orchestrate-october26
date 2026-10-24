@@ -1,0 +1,19 @@
+{
+ "task": "intent",
+ "model": "gemini/gemini-3.6-flash",
+ "usage": {
+  "input_tokens": 165,
+  "output_tokens": 343,
+  "total_tokens": 508,
+  "seconds": 17.88
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_10",
+    "decision": "deletion",
+    "reason": "The user is explicitly requesting the removal of personal records linked to their old and current email addresses."
+   }
+  ]
+ }
+}

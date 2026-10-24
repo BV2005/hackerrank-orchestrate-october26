@@ -158,16 +158,18 @@ def vision_section(test, test_answers):
 def configuration(answers):
     """What the evaluated run used: screenshot source, intent source and model coverage."""
     from evidence import load_image_extractions
-    from llm import configured, setting
+    from llm import configured, models
     producers = Counter(e["producer"] for e in load_image_extractions().values())
     reasons = [a[2][1] for a in answers.values()]
     agree = sum("(model agrees)" in r for r in reasons)
     disagree = sum("MODEL DISAGREES" in r for r in reasons)
     intent = "rule classifier only (no model configured)"
     if configured():
-        intent = (f"rule classifier + Gemini second opinion ({setting('GEMINI_MODEL')}): model opinion "
+        intent = (f"rule classifier + model second opinion via LiteLLM (chain: {', '.join(models())}): model opinion "
                   f"obtained for {agree + disagree}/{len(reasons)} test requests, agreeing on {agree}, "
-                  f"disagreeing on {disagree}; the rest were decided by the rules alone (model unavailable)")
+                  f"disagreeing on {disagree}" +
+                  (f"; the other {len(reasons) - agree - disagree} were decided by the rules alone (model "
+                   "unavailable)" if agree + disagree < len(reasons) else ""))
     return [f"- Screenshot evidence: {', '.join(f'{k} ({v} files)' for k, v in sorted(producers.items()))}",
             f"- Intent: {intent}",
             "- Everything else (identity, evidence parsing, resource linking, policy, steps, validation): "

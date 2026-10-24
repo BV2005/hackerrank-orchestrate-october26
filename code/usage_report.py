@@ -6,7 +6,7 @@ Prices are not hard-coded: set GEMINI_PRICE_INPUT_PER_MTOK and GEMINI_PRICE_OUTP
 import json
 from collections import defaultdict
 
-from llm import USAGE_LOG, HERE, setting
+from llm import USAGE_LOG, HERE, models, setting
 
 REPORT = HERE / "evaluation" / "usage_report.md"
 
@@ -38,8 +38,9 @@ def write_usage_report(run_id, n_requests):
 
     lines = ["# Token usage and cost", "",
              f"Final full-dataset run `{run_id}` that produced `output.csv` ({n_requests} requests).", "",
-             "Provider: Google (Gemini API, `google-genai` SDK). Everything else in the pipeline is "
-             "deterministic Python and uses no model.", "",
+             "Provider: Google Gemini API, called through LiteLLM over the fallback chain "
+             f"`{', '.join(models())}` (a model whose free daily quota is used up hands over to the next). "
+             "Everything else in the pipeline is deterministic Python and uses no model.", "",
              "Model answers are cached by a hash of their input, so a re-run makes no new API calls. "
              "`Model calls` counts every answer the run used; `API calls` counts the ones billed during "
              "this run; tokens are those of the answers used (a cached answer carries the tokens it cost "

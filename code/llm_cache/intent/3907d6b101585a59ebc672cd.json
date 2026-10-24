@@ -1,0 +1,19 @@
+{
+ "task": "intent",
+ "model": "gemini/gemini-3.6-flash",
+ "usage": {
+  "input_tokens": 155,
+  "output_tokens": 424,
+  "total_tokens": 579,
+  "seconds": 6.73
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_24",
+    "decision": "not_deletion",
+    "reason": "The user is requesting a copy of their invoices and explicitly asking to keep the account open."
+   }
+  ]
+ }
+}
