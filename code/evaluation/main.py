@@ -236,7 +236,8 @@ def main():
               for n, c, t, e, g, ok, why in custom]
     lines += ["", "## Test-set status mix (518 cases, no public answers)", "",
               ", ".join(f"{k}: {v}" for k, v in sorted(test_status.items())), ""]
-    lines += [line.rstrip() for line in (HERE / "findings.md").read_text(encoding="utf-8").splitlines()]
+    for part in ("manual_spot_check.md", "findings.md"):  # hand-written sections
+        lines += [line.rstrip() for line in (HERE / part).read_text(encoding="utf-8").splitlines()] + [""]
     (HERE / "evaluation_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines[:22]))
     print(f"custom cases passed: {sum(r[5] for r in custom)}/{len(custom)}")
