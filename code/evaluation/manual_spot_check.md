@@ -27,7 +27,6 @@ reading that evidence.
 | case_177 | INCOMPLETE | 07-23 inventory 17 min before audit: account (DELETION_PENDING, email) and search document with email still present | correct |
 | case_417 | INCOMPLETE | 03-25 syslog 1 min before audit: search hit and account lookup returning the profile | correct |
 | case_140 | INCOMPLETE | 08-12 export at audit time: account NOT_FOUND; analytics IDENTIFIABLE, connector ACTIVE, search and support present | correct |
-
 | case_218 | COMPLETE | 07-03 inventory 17 min before audit: audit record retained, account absent; a later log shows the account 404 at 07:58 | correct |
 | case_380 | COMPLETE | 04-14 trace: account 404, audit record retained | correct |
 | case_455 | INCOMPLETE | 03-05 replica dump at audit time: search document with name and email, support attachment uploaded by the subject; run log shows both deletions failed | correct; timing-placed account followed by the subject's own run events |
