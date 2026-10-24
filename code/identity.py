@@ -71,6 +71,18 @@ class Identities:
             hits.add((self.by_phone[key], "phone"))
         return hits
 
+    def is_current(self, uid, how, value):
+        """Is `value` (matched as kind `how`) one of the user's current identifiers?"""
+        row = self.users[uid]
+        v = value.strip().lower()
+        if how == "email":
+            return v == row["email"].lower()
+        if how == "email_hash":
+            return v == row["email_hash"].lower()
+        if how == "phone":
+            return phone_key(v) == phone_key(row["phone"])
+        return True  # user_id never changes
+
     def match_text(self, text):
         """Users identified anywhere inside free text (messages, PDF segments)."""
         hits = set()

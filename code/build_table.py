@@ -14,7 +14,7 @@ from datetime import datetime
 from pathlib import Path
 
 from evidence import RES_RE, load_evidence, system_of
-from identity import EMAIL_RE, USER_RE, Identities
+from identity import EMAIL_RE, HASH_RE, USER_RE, Identities
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASET = ROOT / "dataset"
@@ -37,6 +37,7 @@ TRUE = {True, 1, "1", "true", "True"}
 RUN_WINDOW_MIN = 80  # account delete lands 40-75 min before reported_at in the samples
 RUN_GAP_S = 6680  # median account-delete -> first linked follow-up gap, evidence-linked cases
 RUN_STEPS_S = (390, 449)  # spacing between successful policy actions inside one run
+OLD_ID_ONLY_CATEGORIES = {"ANALYTICS_PROFILE", "PRODUCT_TELEMETRY", "SUPPORT_MESSAGE", "EMAIL_DELIVERY_LOG"}
 
 
 def ts(value):
@@ -49,12 +50,20 @@ def read_csv(name):
 
 
 def record_users(rec, ids):
-    """(user_id, how) pairs a record links to, from any field or free text."""
+    """(user_id, how) pairs a record links to, from any field or free text.
+
+    `how` is prefixed with 'old_' when the matching value is an identifier the user no
+    longer holds (a superseded email, phone or hash from user_audit_log).
+    """
     hits = set()
     for k, v in rec["fields"].items():
         if not isinstance(v, str):
             continue
-        hits |= ids.match_text(v) if k.split(".")[-1] in TEXT_KEYS else ids.match_value(v)
+        values = (EMAIL_RE.findall(v) + USER_RE.findall(v) + HASH_RE.findall(v)
+                  if k.split(".")[-1] in TEXT_KEYS else [v])
+        for value in values:
+            for uid, how in ids.match_value(value):
+                hits.add((uid, how if ids.is_current(uid, how, value) else f"old_{how}"))
     return hits
 
 
@@ -103,10 +112,14 @@ def category_of(resource_id, recs):
             return rt
     prefix = re.sub(r"_\d+$", "", resource_id)
     if prefix == "support":
-        attachment = any("attachment" in rec["container"] or "file_name" in rec["fields"]
-                         or rec["fields"].get("record_type") == "SUPPORT_ATTACHMENT"
-                         for rec in recs)
-        return "SUPPORT_ATTACHMENT" if attachment else "SUPPORT_MESSAGE"
+        # rule 05 redacts a conversation only for the shared context it holds; a support
+        # record with no conversation content in evidence belongs to the subject alone
+        conversation = any("conversation" in rec["container"]
+                           or any(k.split(".")[-1] in ("message_text", "message_excerpt", "requester_email",
+                                                       "requester_name") for k in rec["fields"])
+                           or re.search(r"message|ticket", str(rec["fields"].get("event", "")))
+                           for rec in recs)
+        return "SUPPORT_MESSAGE" if conversation else "SUPPORT_ATTACHMENT"
     return CATEGORY_BY_PREFIX.get(prefix, "UNKNOWN")
 
 
@@ -218,7 +231,8 @@ def guess_account(candidates, mine, worker_times, by_account):
     return min(candidates, key=lambda r: when[r])
 
 
-def main(requests_file="deletion_requests.csv"):
+def build_rows(requests):
+    """case x resource rows for the given request dicts; returns (rows, images_skipped)."""
     ids = Identities(DATASET)
     records, coverage, skipped = load_evidence(DATASET)
     activity = read_csv("system_activity.csv")
@@ -262,7 +276,7 @@ def main(requests_file="deletion_requests.csv"):
     run_analytics = resolve_run_analytics(ids, owners, activity, worker_times)
     guessed = set()
     rows = []
-    for req in read_csv(requests_file):
+    for req in requests:
         uid, kind = ids.resolve_email(req["email"])
         user = ids.users.get(uid, {})
         cutoff = req["audit_at"]
@@ -307,7 +321,14 @@ def main(requests_file="deletion_requests.csv"):
             latest = [o for o in explicit if o[0] == explicit[-1][0]]
             # within the latest capture any surviving copy (e.g. a replica) wins over absence
             pick = next((o for o in latest if not o[3].startswith("ABSENT")), latest[0]) if latest else None
-            category = category_of(rid, recs)
+            # category is a static property, so read it from every capture of the record
+            category = category_of(rid, by_resource.get(rid, []))
+            evidence_links = [v for v in mine[rid] if "@evidence_" in v and not v.startswith("ref:")]
+            if (category in OLD_ID_ONLY_CATEGORIES and evidence_links
+                    and all(v.startswith("old_") for v in evidence_links)):
+                # tied to the subject only through identifiers they no longer hold: a
+                # leftover secondary identifier (rule 02), not a record to redact or anonymize
+                category = "SECONDARY_IDENTIFIER"
             rule = RULES.get(category, {})
             if pick and pick[2] == "omitted" and rule.get("required_action") == "RETAIN":
                 pick = None  # scoped dumps omitting a retained record do not prove it was deleted
@@ -335,6 +356,11 @@ def main(requests_file="deletion_requests.csv"):
                 "observation_history": " | ".join(f"{o[1]}:{o[2]}:{o[3]}" for o in sorted(obs)[-6:]),
             })
 
+    return rows, skipped
+
+
+def main(requests_file="deletion_requests.csv"):
+    rows, skipped = build_rows(read_csv(requests_file))
     OUT.mkdir(exist_ok=True)
     with open(OUT / f"{Path(requests_file).stem}_table.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))

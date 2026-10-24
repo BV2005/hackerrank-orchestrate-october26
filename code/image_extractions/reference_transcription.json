@@ -73,7 +73,7 @@
     "producer": "claude-code-session-transcription",
     "screen": "Customer Reference Registry - user_17, 'Retained reference', customer key, Account Platform eu-west",
     "records": [
-      {"resource_id": null, "result": "REDACTED", "subject_reference": "user_17", "note": "no name, email or phone shown; created 11 Jan 2024, most recent update 10 Mar 2026 07:18 UTC; active links to ORD-20263245, CS-3245, CS-3378, FIN-7742. The screen shows no resource id (system_activity activity_4011 calls this reference tombstone_17)"}
+      {"resource_id": "tombstone_17", "resource_id_source": "system_activity activity_4011 ('Data catalog linked tombstone_17 (user_17)'); the screen itself shows only the reference user_17", "result": "REDACTED", "subject_reference": "user_17", "note": "no name, email or phone shown; created 11 Jan 2024, most recent update 10 Mar 2026 07:18 UTC; active links to ORD-20263245, CS-3245, CS-3378, FIN-7742"}
     ]
   },
   "evidence_46": {
