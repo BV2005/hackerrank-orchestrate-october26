@@ -116,6 +116,8 @@ Each reuses a sample case's subject and audit time, changing only what the case 
 | keep-the-account instruction | case_24 | negated deletion wording | NOT_APPLICABLE | NOT_APPLICABLE | yes | export_or_access (model agrees) |
 | same subject, current instead of historical email | case_10 | identity resolution across email changes | INCOMPLETE | INCOMPLETE | yes | deletion term 'remove' (model agrees) |
 | Korean deletion request | case_01 | multilingual intent | COMPLETE | COMPLETE | yes | deletion term '삭제' (model agrees) |
+| Spanish keep-my-account request | case_02 | keep-the-account wording in another language | NOT_APPLICABLE | NOT_APPLICABLE | yes | keep_account_other_language (model agrees) |
+| 'close' about a ticket, account must stay open | case_05 | a deletion word used for something else | NOT_APPLICABLE | NOT_APPLICABLE | yes | keep_account (model agrees) |
 | German deletion request | case_01 | multilingual intent (language not in the dataset) | COMPLETE | COMPLETE | yes | deletion term 'löschen' (model agrees) |
 
 ## Test-set status mix (518 cases, no public answers)

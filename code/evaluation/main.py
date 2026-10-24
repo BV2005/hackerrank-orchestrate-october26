@@ -94,6 +94,12 @@ def custom_cases(samples, gold):
         ("Korean deletion request", dict(by_id["case_01"], request_text=(
             "이 이메일 주소에 연결된 계정의 영구 삭제를 요청합니다.")),
          gold["case_01"], "multilingual intent"),
+        ("Spanish keep-my-account request", dict(by_id["case_02"], request_text=(
+            "Por favor, no eliminen mi cuenta. Solo quiero actualizar mi número de teléfono.")),
+         ("NOT_APPLICABLE", []), "keep-the-account wording in another language"),
+        ("'close' about a ticket, account must stay open", dict(by_id["case_05"], request_text=(
+            "Please close the ticket about my login problem; my account must stay open.")),
+         ("NOT_APPLICABLE", []), "a deletion word used for something else"),
         ("German deletion request", dict(by_id["case_01"], request_text=(
             "Bitte löschen Sie mein Konto und alle zugehörigen personenbezogenen Daten.")),
          gold["case_01"], "multilingual intent (language not in the dataset)"),

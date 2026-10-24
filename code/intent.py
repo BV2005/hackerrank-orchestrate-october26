@@ -15,7 +15,19 @@ NOT_DELETION = {
     "correction": r"misspell|out of date|correct (it|my)|change the (e-?mail|name|phone)|update my",
     "account_support": r"reset(ting)? (the |my )?(login|password)|can.t access my",
     "keep_account": r"do not (close|delete|remove)|don.t (close|delete)|keep (the|my) (account|profile)"
-                    r"|without removing|still (need|use) (the|it|my)",
+                    r"|without removing|still (need|use) (the|it|my)"
+                    r"|(account|profile) (must|should|to) (stay|remain) (open|active)|leave the account (open|active)",
+    # the same instruction in the other request languages. Scoped to the account itself:
+    # "keep anonymous statistics" or "you may retain backups" still ask for deletion
+    "keep_account_other_language":
+        r"no (eliminen|borren|cierren|eliminar|borrar|cerrar) (mi|la) cuenta|(mantener|conservar) (mi|la) cuenta"  # es
+        r"|ne (supprimez|fermez) pas (mon|le) compte|ne pas (supprimer|fermer) (mon|le) compte"                 # fr
+        r"|(garder|conserver) (mon|le) compte"
+        r"|(mein|das) konto (nicht )?(behalten|löschen nicht)|(konto|profil) nicht (löschen|schließen)"         # de
+        r"|não (excluam|apaguem|encerrem|excluir|apagar|encerrar) (a minha |a |minha )?conta"                     # pt
+        r"|manter (a minha |a |minha )?conta"
+        r"|アカウントを?(削除|閉鎖|解約)しないで|アカウントを?(残して|維持)"                                         # ja
+        r"|계정을? ?(삭제|해지|탈퇴)하지 ?마|계정을? ?유지",                                                       # ko
 }
 DELETION = (
     r"\b(delet\w*|eras\w*|remov\w*|close[ds]?|closing)\b|account-deletion"
@@ -75,7 +87,9 @@ def model_opinions(requests, run_id=None, batch=50):
 
 def decide(requests, run_id=None):
     """case_id -> (decision, reason, source). Rules decide when confident; the model
-    decides 'uncertain' ones. Disagreements stay with the rules and are reported."""
+    decides 'uncertain' ones. Deletion is the irreversible outcome, so it needs both to
+    agree: if the rules say deletion but the model says the person wants something else
+    (e.g. a keep-my-account request the rules misread), deletion is not authorized."""
     opinions = model_opinions(requests, run_id)
     decisions = {}
     for r in requests:
@@ -85,6 +99,9 @@ def decide(requests, run_id=None):
             decisions[r["case_id"]] = (model[0], f"model: {model[1]}", "model")
         elif label == "uncertain":
             decisions[r["case_id"]] = ("deletion", "no rule matched; audited as deletion", "default")
+        elif label == "deletion" and model and model[0] == "not_deletion":
+            decisions[r["case_id"]] = ("not_deletion", f"{why}, but MODEL DISAGREES: {model[1]}; "
+                                       "deletion needs both to agree", "model_veto")
         else:
             agrees = "" if model is None else (" (model agrees)" if model[0] == label else
                                                f" (MODEL DISAGREES: {model[1]})")

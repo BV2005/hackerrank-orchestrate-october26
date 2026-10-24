@@ -1,0 +1,19 @@
+{
+ "task": "intent",
+ "model": "gemini/gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 155,
+  "output_tokens": 59,
+  "total_tokens": 214,
+  "seconds": 4.67
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_05",
+    "decision": "not_deletion",
+    "reason": "The user explicitly states that their account must stay open."
+   }
+  ]
+ }
+}
