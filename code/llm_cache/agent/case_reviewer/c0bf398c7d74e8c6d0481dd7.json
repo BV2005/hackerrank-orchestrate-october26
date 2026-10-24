@@ -1,0 +1,42 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 3658,
+  "output_tokens": 108,
+  "total_tokens": 3766,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_1731609",
+      "args": {
+       "case_id": "case_28",
+       "confidence": "high",
+       "account_resource_id": "account_5482",
+       "reason": "Evidence shows account_5482 is absent (status 404), confirming the pipeline's choice. Account 7012 has no evidence records at or before audit time.",
+       "evidence_ids": [
+        "evidence_92"
+       ],
+       "decision": "confirm_pipeline"
+      },
+      "name": "set_model_response"
+     },
+     "thought_signature": "EmAKXgFpFH0TOmwAsJMA0iWujQxPlr8fpz_2Jt0MtDJdL4fwVGBo-rqfNuDaDqRoBtQJfcUHjdODUteocpsZubY-8y25pD-NYd8q8dj31YsS84EliWvV4cJvtOy33J3tq-8="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 108,
+   "prompt_token_count": 3658,
+   "total_token_count": 3766
+  }
+ }
+}

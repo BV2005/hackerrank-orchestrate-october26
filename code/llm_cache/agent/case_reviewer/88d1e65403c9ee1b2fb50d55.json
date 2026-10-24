@@ -1,0 +1,42 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 3642,
+  "output_tokens": 119,
+  "total_tokens": 3761,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_404562",
+      "args": {
+       "reason": "Account account_5521 was successfully deleted during the deletion run prior to the report, whereas account_5037 failed deletion. Therefore, account_5521 is correctly identified as the deleted account belonging to the user.",
+       "case_id": "case_18",
+       "account_resource_id": "account_5521",
+       "confidence": "high",
+       "evidence_ids": [
+        "activity_3732"
+       ],
+       "decision": "confirm_pipeline"
+      },
+      "name": "set_model_response"
+     },
+     "thought_signature": "EmAKXgFpFH0TsAG_-3ZuWYhyRlF3ZSuYfXHFE3wD68zmxVTxvLzQX1pl7JW3DEjnobDWhx-FAJN3q4v8inT7FWxymtsCU3bz5eVaIGGIBp-PGgCGaQXMZv4nC-G6TJDLbVs="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 119,
+   "prompt_token_count": 3642,
+   "total_token_count": 3761
+  }
+ }
+}

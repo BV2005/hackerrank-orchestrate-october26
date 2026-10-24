@@ -1,0 +1,19 @@
+{
+ "task": "intent",
+ "model": "gemini/gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 155,
+  "output_tokens": 61,
+  "total_tokens": 216,
+  "seconds": 5.9
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_01",
+    "decision": "deletion",
+    "reason": "The user is explicitly asking to delete their account and all associated personal data."
+   }
+  ]
+ }
+}

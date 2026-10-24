@@ -1,0 +1,36 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 2984,
+  "output_tokens": 34,
+  "total_tokens": 3018,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_981253",
+      "args": {
+       "resource_id": "search_4262",
+       "case_id": "case_20"
+      },
+      "name": "get_evidence"
+     },
+     "thought_signature": "EmAKXgFpFH0TWHqAf4QTYir6_aZ-G8rFs50hSiuLftXG3iWsEHbCzmqOtkOEvVw2gcD3WjVj9xJXVj2EQwuvSO5TlnYsBAvke8XWt7TgX6xGsdJp4uyOxxcXAUL94ls2Rh4="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 34,
+   "prompt_token_count": 2984,
+   "total_token_count": 3018
+  }
+ }
+}

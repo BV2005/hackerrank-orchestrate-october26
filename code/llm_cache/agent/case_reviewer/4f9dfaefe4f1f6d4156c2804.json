@@ -1,0 +1,36 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 2941,
+  "output_tokens": 34,
+  "total_tokens": 2975,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_1057542",
+      "args": {
+       "resource_id": "export_7364",
+       "case_id": "case_23"
+      },
+      "name": "get_activity"
+     },
+     "thought_signature": "EmAKXgFpFH0Tm1SrDmqdWAY0o5oXHQlyC4SyfBfqiACVa867IDCyAsNL_WykTS4QHZm4Z8mFw6Y6b1nci0CgbqjGm3ETWHTf9XYb9ECwOQhY7EZbzcZ0bms6sdL6tY_z5y4="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 34,
+   "prompt_token_count": 2941,
+   "total_token_count": 2975
+  }
+ }
+}

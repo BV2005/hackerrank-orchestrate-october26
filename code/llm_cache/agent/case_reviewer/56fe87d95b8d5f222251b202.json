@@ -1,0 +1,36 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 2619,
+  "output_tokens": 35,
+  "total_tokens": 2654,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_985553",
+      "args": {
+       "resource_id": "tombstone_440",
+       "case_id": "case_31"
+      },
+      "name": "get_evidence"
+     },
+     "thought_signature": "EmAKXgFpFH0T9jZDruzoCVOk5HepKbFqfn6qGJhtBeOnBxTJgxzjEBduxmnjKjqq78Jd7uKb_y6Maw3VUuRqdhrvzQhJdVj87LEd34MQhQEZMABzsx1pSfsM-4K60Ch8x4c="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 35,
+   "prompt_token_count": 2619,
+   "total_token_count": 2654
+  }
+ }
+}

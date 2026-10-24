@@ -1,0 +1,66 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 2301,
+  "output_tokens": 140,
+  "total_tokens": 2441,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_479438",
+      "args": {
+       "resource_id": "account_8858",
+       "case_id": "case_32"
+      },
+      "name": "get_activity"
+     },
+     "thought_signature": "EmAKXgFpFH0TC8mGoYNxZ_lI42gNSWrdiODeX4BO-ja9ZVk1qINSu7_S4zILRdk46Tj7Xj8ZPSLDEE_y4vt9iWtTeBRV2Dh9Bj8PxRbsvhVTfgjT8X6yreoOWEzevBuDwXA="
+    },
+    {
+     "function_call": {
+      "id": "call_479439",
+      "args": {
+       "case_id": "case_32",
+       "resource_id": "account_4857"
+      },
+      "name": "get_activity"
+     }
+    },
+    {
+     "function_call": {
+      "id": "call_479440",
+      "args": {
+       "resource_id": "tombstone_9178",
+       "case_id": "case_32"
+      },
+      "name": "get_evidence"
+     }
+    },
+    {
+     "function_call": {
+      "id": "call_479441",
+      "args": {
+       "case_id": "case_32",
+       "resource_id": "audit_record_7068"
+      },
+      "name": "get_evidence"
+     }
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 140,
+   "prompt_token_count": 2301,
+   "total_token_count": 2441
+  }
+ }
+}

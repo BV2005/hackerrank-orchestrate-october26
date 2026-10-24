@@ -1,0 +1,84 @@
+{
+ "case_18": {
+  "case_id": "case_18",
+  "decision": "confirm_pipeline",
+  "account_resource_id": "account_5521",
+  "confidence": "high",
+  "evidence_ids": [
+   "activity_3732"
+  ],
+  "reason": "Account account_5521 was successfully deleted during the deletion run prior to the report, whereas account_5037 failed deletion. Therefore, account_5521 is correctly identified as the deleted account belonging to the user."
+ },
+ "case_21": {
+  "case_id": "case_21",
+  "decision": "confirm_pipeline",
+  "account_resource_id": "account_294",
+  "confidence": "low",
+  "evidence_ids": [
+   "evidence_51",
+   "evidence_92"
+  ],
+  "reason": "The evidence does not definitively link any of the candidate account deletions to user_21 since accounts lack identifiers, but confirming the pipeline's pick is appropriate given the timing window."
+ },
+ "case_22": {
+  "case_id": "case_22",
+  "decision": "confirm_pipeline",
+  "account_resource_id": "account_6829",
+  "confidence": "high",
+  "evidence_ids": [
+   "evidence_05"
+  ],
+  "reason": "Account_6829 was correctly chosen by the pipeline as it aligns with the deletion event and state observed in the audit trail for case_22."
+ },
+ "case_23": {
+  "case_id": "case_23",
+  "decision": "confirm_pipeline",
+  "account_resource_id": "account_8832",
+  "confidence": "high",
+  "evidence_ids": [
+   "evidence_92"
+  ],
+  "reason": "Evidence links export_7364 and search_898 to email thandiwe.m6866@zoho.com, and account_8832 was deleted in the correct window preceding the deletion run. Therefore, confirming the pipeline's selection of account_8832 is correct."
+ },
+ "case_25": {
+  "case_id": "case_25",
+  "decision": "confirm_pipeline",
+  "account_resource_id": "account_3136",
+  "confidence": "high",
+  "evidence_ids": [
+   "evidence_92"
+  ],
+  "reason": "Evidence shows account_3136 is absent (status 404) in account_service during audit, confirming it was the account successfully deleted despite the initial FAILED report."
+ },
+ "case_28": {
+  "case_id": "case_28",
+  "decision": "confirm_pipeline",
+  "account_resource_id": "account_5482",
+  "confidence": "high",
+  "evidence_ids": [
+   "evidence_92"
+  ],
+  "reason": "Evidence shows account_5482 is absent (status 404), confirming the pipeline's choice. Account 7012 has no evidence records at or before audit time."
+ },
+ "case_31": {
+  "case_id": "case_31",
+  "decision": "confirm_pipeline",
+  "account_resource_id": "account_4857",
+  "confidence": "high",
+  "evidence_ids": [
+   "evidence_51"
+  ],
+  "reason": "Account account_4857 completed deletion successfully with a SUCCESS result at 10:45:58Z prior to the subsequent tombstone event at 11:31:39Z, whereas account_8858 resulted in a PARTIAL failure. Therefore, the pipeline's pick of account_4857 is confirmed."
+ },
+ "case_32": {
+  "case_id": "case_32",
+  "decision": "confirm_pipeline",
+  "account_resource_id": "account_8858",
+  "confidence": "high",
+  "evidence_ids": [
+   "evidence_51",
+   "activity_3685"
+  ],
+  "reason": "Account resource account_8858 was correctly picked by the pipeline as its deletion event timing closely precedes the report, and the tombstone evidence matches the user identity subject reference user_542."
+ }
+}

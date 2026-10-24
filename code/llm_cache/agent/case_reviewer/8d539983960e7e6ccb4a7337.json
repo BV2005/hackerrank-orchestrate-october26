@@ -1,0 +1,43 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 3515,
+  "output_tokens": 117,
+  "total_tokens": 3632,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_1509863",
+      "args": {
+       "confidence": "high",
+       "evidence_ids": [
+        "evidence_05",
+        "evidence_94"
+       ],
+       "decision": "choose_other",
+       "account_resource_id": "account_5521",
+       "reason": "Account account_5037 failed deletion according to its activity log and has an absent profile, whereas account_5521 successfully completed its deletion event and matches the intended deletion process for this user.",
+       "case_id": "case_20"
+      },
+      "name": "set_model_response"
+     },
+     "thought_signature": "EmAKXgFpFH0TyBsjtNJnJfk1SfVqrqChcyTAaWYMJemqeJKCC5FhHi6NHaujHDq6ZBT9kpjb6fjQF1FGqTgMFLpemHGZ1N4r9M0O-6L9dNWlxIKNnkbD7uEkoV9Ma-MZ028="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 117,
+   "prompt_token_count": 3515,
+   "total_token_count": 3632
+  }
+ }
+}

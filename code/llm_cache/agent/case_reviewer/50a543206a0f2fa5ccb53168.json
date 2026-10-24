@@ -1,0 +1,43 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 3248,
+  "output_tokens": 118,
+  "total_tokens": 3366,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_982661",
+      "args": {
+       "case_id": "case_32",
+       "reason": "Account resource account_8858 was correctly picked by the pipeline as its deletion event timing closely precedes the report, and the tombstone evidence matches the user identity subject reference user_542.",
+       "evidence_ids": [
+        "evidence_51",
+        "activity_3685"
+       ],
+       "decision": "confirm_pipeline",
+       "account_resource_id": "account_8858",
+       "confidence": "high"
+      },
+      "name": "set_model_response"
+     },
+     "thought_signature": "EmAKXgFpFH0TuV6vAZnAtXSRciHS-EJYQfyaMk7hQvstihwwqHGHy5WihlVZvUmWeu6IQfAl6ZIDiUf_vQn8LXD-qNMg4qkSfwA17KTFzVR-t9tr9vZ6bliYQGnYdhHJy2E="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 118,
+   "prompt_token_count": 3248,
+   "total_token_count": 3366
+  }
+ }
+}

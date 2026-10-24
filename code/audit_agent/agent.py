@@ -30,7 +30,7 @@ from . import callbacks, tools  # noqa: E402
 
 llm._export_keys()  # keys from .env / the Windows user environment, for LiteLLM
 _chain = llm.models() or ["gemini/gemini-3.6-flash"]
-MODEL = LiteLlm(model=_chain[0], fallbacks=_chain[1:], temperature=0)
+MODEL = LiteLlm(model=_chain[0], fallbacks=_chain[1:])  # Gemini 3 deprecates temperature
 
 
 class ReviewDecision(BaseModel):

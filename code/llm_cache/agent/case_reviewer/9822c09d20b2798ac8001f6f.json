@@ -1,0 +1,36 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 2808,
+  "output_tokens": 36,
+  "total_tokens": 2844,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_1481519",
+      "args": {
+       "resource_id": "audit_record_6909",
+       "case_id": "case_31"
+      },
+      "name": "get_evidence"
+     },
+     "thought_signature": "EmAKXgFpFH0TivFUC88DlKXzBhxCdoc6DbrlhydEjMo3wSyGv3YqQsvXK-cBOR3QB2UYPHp2OX9R6VgzjzLy_UY_xDovfhFNS_CVKccGAyxwMgswKg37dxjPC5V0t19QXjw="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 36,
+   "prompt_token_count": 2808,
+   "total_token_count": 2844
+  }
+ }
+}

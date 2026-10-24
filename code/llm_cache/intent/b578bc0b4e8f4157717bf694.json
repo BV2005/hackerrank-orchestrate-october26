@@ -1,0 +1,19 @@
+{
+ "task": "intent",
+ "model": "gemini/gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 159,
+  "output_tokens": 63,
+  "total_tokens": 222,
+  "seconds": 6.76
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_01",
+    "decision": "deletion",
+    "reason": "The user is explicitly requesting the permanent deletion of the account associated with this email address."
+   }
+  ]
+ }
+}

@@ -1,8 +1,8 @@
 # Token usage and cost
 
-Final full-dataset run `run-20261024T162347Z` that produced `output.csv` (518 requests).
+Final full-dataset run `run-20261024T174159Z` that produced `output.csv` (518 requests).
 
-Provider: Google Gemini API, called through LiteLLM over the fallback chain `gemini/gemini-3.8-flash, gemini/gemini-3.7-flash, gemini/gemini-3.6-flash, gemini/gemini-3.5-flash, gemini/gemini-2.5-flash` (a model whose free daily quota is used up hands over to the next). Everything else in the pipeline is deterministic Python and uses no model.
+Provider: Google Gemini API, called through LiteLLM over the fallback chain `gemini/gemini-3.5-flash-lite, gemini/gemini-3.1-flash-lite, gemini/gemini-3.8-flash, gemini/gemini-3.7-flash, gemini/gemini-3.6-flash, gemini/gemini-3.5-flash` (a model whose free daily quota is used up hands over to the next). Everything else in the pipeline is deterministic Python and uses no model.
 
 Model answers are cached by a hash of their input, so a re-run makes no new API calls. `Model calls` counts every answer the run used; `API calls` counts the ones billed during this run; tokens are those of the answers used (a cached answer carries the tokens it cost when it was made).
 

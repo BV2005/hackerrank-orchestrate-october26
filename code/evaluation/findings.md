@@ -23,6 +23,8 @@ Measured with `code/check_table.py` (resource-level, sample cases) while buildin
 
 | 16 | One free-tier model (20 requests/day) cannot cover the run: 10 of 11 intent batches went unanswered | Model calls go through LiteLLM over a fallback chain of Gemini models, each with its own daily quota; a model out of quota (or rejecting the request) hands over to the next, short overloads retry in place | Live run: gemini-3.8-flash and 3.7-flash refused (quota), 3.6-flash answered 9 batches, 3.5-flash took the one 3.6 dropped (503); model opinion for 518/518 test requests, agreeing with the rules on all 518 |
 
+| 17 | ADK `case_reviewer` (free tier, gemini-3.5-flash-lite, 70 calls) on the 10 flagged sample cases: 5/10 right vs the timing guess's 7/10. It moved two correct picks to accounts belonging to other cases (case_20, case_29), reasoning that an account whose deletion "succeeded" must be the subject's - treating a workflow claim as proof of ownership, with "high" confidence | `review.py` now rejects a choice of an account the pipeline already places in another case; the reviewer stays out of output.csv (main.py never applies its decisions) | With the guard: 8/10 decisions accepted, net 7/10 = no gain over the pipeline, so it is kept as an explanation / investigation tool, not a decider |
+
 Decisions backed by the sample answers:
 - The legal-hold register PDF is not parsed: its six rows all name sample-case users whose answers contain no legal hold.
 - Name matching was tested as an extra identifier and dropped: it added no correct link.

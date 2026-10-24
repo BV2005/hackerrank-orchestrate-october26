@@ -1,0 +1,35 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 2111,
+  "output_tokens": 23,
+  "total_tokens": 2134,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_1602266",
+      "args": {
+       "case_id": "case_20"
+      },
+      "name": "list_account_candidates"
+     },
+     "thought_signature": "EmAKXgFpFH0Tf3r7n5FXqjZcVa5U7g-ebrlAxRYvFKMes4LGaN8d7vVJt4s4x9j_Rf5Ck2jLOUckVP_eibvCH6ASEuV0TYPrYY4BjG8pyp2PO7FeLMBMKKeJUyrh1Tb8WZo="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 23,
+   "prompt_token_count": 2111,
+   "total_token_count": 2134
+  }
+ }
+}

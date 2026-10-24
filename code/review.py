@@ -22,7 +22,11 @@ REVIEWS = Path(__file__).resolve().parent / "audit_agent" / "reviews.json"
 def review(case_id):
     """(accepted decision or None, raw answer, tool calls) for one flagged case."""
     candidates = tools.list_account_candidates(case_id)
-    allowed = {c["resource_id"] for c in candidates.get("candidates", [])}
+    # an account the pipeline already places in another case is not free to take
+    rows = tools._data()[2]
+    taken = {r["resource_id"] for c, rs in rows.items() if c != case_id for r in rs
+             if r["resource_id"].startswith("account_")}
+    allowed = {c["resource_id"] for c in candidates.get("candidates", [])} - (taken - {candidates.get("pipeline_pick")})
     text, calls = run_agent(case_reviewer, f"Review {case_id}.")
     try:
         decision = json.loads(text)

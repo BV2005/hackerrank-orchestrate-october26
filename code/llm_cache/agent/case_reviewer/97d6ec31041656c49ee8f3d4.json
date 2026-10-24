@@ -1,0 +1,43 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 3018,
+  "output_tokens": 110,
+  "total_tokens": 3128,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_982088",
+      "args": {
+       "decision": "confirm_pipeline",
+       "account_resource_id": "account_294",
+       "reason": "The evidence does not definitively link any of the candidate account deletions to user_21 since accounts lack identifiers, but confirming the pipeline's pick is appropriate given the timing window.",
+       "evidence_ids": [
+        "evidence_51",
+        "evidence_92"
+       ],
+       "confidence": "low",
+       "case_id": "case_21"
+      },
+      "name": "set_model_response"
+     },
+     "thought_signature": "EmAKXgFpFH0Tcm_hCyHYyN7V378iq41k3FbcMbWkrQJhYnB4IyP9ZVlSeO8_HQy-qAwRgvLJ66fUxUQXeHH36unwJzMPXvK6R3L6UakUb7kBmZ7Rf4CswoJ48HZZHNZPI4w="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 110,
+   "prompt_token_count": 3018,
+   "total_token_count": 3128
+  }
+ }
+}

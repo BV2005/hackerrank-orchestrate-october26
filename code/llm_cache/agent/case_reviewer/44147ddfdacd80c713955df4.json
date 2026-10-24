@@ -1,0 +1,42 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "usage": {
+  "input_tokens": 3902,
+  "output_tokens": 135,
+  "total_tokens": 4037,
+  "seconds": 0
+ },
+ "response": {
+  "model_version": "gemini-3.5-flash-lite",
+  "content": {
+   "parts": [
+    {
+     "function_call": {
+      "id": "call_957607",
+      "args": {
+       "case_id": "case_23",
+       "reason": "Evidence links export_7364 and search_898 to email thandiwe.m6866@zoho.com, and account_8832 was deleted in the correct window preceding the deletion run. Therefore, confirming the pipeline's selection of account_8832 is correct.",
+       "confidence": "high",
+       "evidence_ids": [
+        "evidence_92"
+       ],
+       "decision": "confirm_pipeline",
+       "account_resource_id": "account_8832"
+      },
+      "name": "set_model_response"
+     },
+     "thought_signature": "EmAKXgFpFH0TZkrhTiIJL_oTXB16SFRHxsxx-XPsz0UH42NMmuKXTszs8RQ9_GcJMTYFjjMPuPWjdss6km6SBr8LirMcy5DOCho0EaV1Q9vdyyKogb0fRgYTwm3jyB-kmes="
+    }
+   ],
+   "role": "model"
+  },
+  "partial": false,
+  "finish_reason": "STOP",
+  "usage_metadata": {
+   "cached_content_token_count": 0,
+   "candidates_token_count": 135,
+   "prompt_token_count": 3902,
+   "total_token_count": 4037
+  }
+ }
+}
