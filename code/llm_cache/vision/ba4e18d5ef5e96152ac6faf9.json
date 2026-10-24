@@ -1,0 +1,58 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1415,
+  "output_tokens": 1144,
+  "total_tokens": 2559,
+  "seconds": 104.72
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": "export_1261",
+    "result": "FOUND",
+    "email": "marcus.lee@northstar.shop",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Filename customer_export_1261.zip, status Collecting, created 20 Jun 14:18 UTC"
+   },
+   {
+    "resource_id": "export_1260",
+    "result": "FOUND",
+    "email": "ingrid.dahl@outlook.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Filename customer_export_1260.zip, status Ready, created 18 Jun 2026 06:42 UTC, expires 25 Jun 2026, size 18.4 MB"
+   },
+   {
+    "resource_id": "export_1259",
+    "result": "FOUND",
+    "email": "sara.kim@northstar.shop",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Filename customer_export_1259.zip, status Packaging, created 17 Jun 11:03 UTC"
+   },
+   {
+    "resource_id": "export_1258",
+    "result": "FOUND",
+    "email": "daniel.park@northstar.shop",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Filename customer_export_1258.zip, status Ready, created 16 Jun 09:27 UTC"
+   }
+  ]
+ }
+}

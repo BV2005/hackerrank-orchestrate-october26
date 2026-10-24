@@ -1,0 +1,25 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1389,
+  "output_tokens": 1188,
+  "total_tokens": 2577,
+  "seconds": 111.27
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": "analytics_7438",
+    "result": "IDENTIFIABLE",
+    "email": "darwish.omar@icloud.com",
+    "phone": null,
+    "full_name": "Omar Darwish",
+    "customer_reference": "user_20",
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Pulse Analytics profile; returning shopper in AE market, 12 sessions, last activity 13 Jul 2026 14:22 UTC."
+   }
+  ]
+ }
+}

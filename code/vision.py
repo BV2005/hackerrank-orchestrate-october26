@@ -9,7 +9,7 @@ import json
 import sys
 from pathlib import Path
 
-from llm import NotConfigured, ask_json
+from llm import NotConfigured, ask_json_many
 
 HERE = Path(__file__).resolve().parent
 DATASET = HERE.parent / "dataset"
@@ -59,12 +59,23 @@ def extract(run_id=None):
     with open(DATASET / "evidence_files.csv", encoding="utf-8") as f:
         images = [r for r in csv.DictReader(f) if r["file_path"].endswith(".png")]
     out = {"_about": "Records extracted from the PNG screenshots by Gemini via code/vision.py."}
-    for row in images:
-        data = (DATASET / row["file_path"]).read_bytes()
-        answer = ask_json("vision", PROMPT, SCHEMA, images=[(row["file_path"], data)], run_id=run_id)
+    # screenshots are independent: send them concurrently (llm.WORKERS at a time), each
+    # with its own retry/backoff, so one overloaded request does not hold up the rest
+    jobs = [{"task": "vision", "prompt": PROMPT, "schema": SCHEMA, "run_id": run_id,
+             "images": [(row["file_path"], (DATASET / row["file_path"]).read_bytes())]} for row in images]
+    failed = []
+    for row, answer in zip(images, ask_json_many(jobs)):
+        if isinstance(answer, Exception):
+            failed.append(row["file_id"])
+            continue
         out[row["file_id"]] = {"producer": "gemini-vision", "screen": row["file_path"],
                                "records": answer["records"]}
         print(f"{row['file_id']}: {len(answer['records'])} records")
+    if failed:
+        # keep the last complete extraction (or the reference transcription) rather than
+        # replacing it with a partial one
+        print(f"vision: model unavailable for {failed}; existing extraction kept")
+        return json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out
 

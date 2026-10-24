@@ -1,0 +1,25 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1415,
+  "output_tokens": 1272,
+  "total_tokens": 2687,
+  "seconds": 231.55
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": "marketing_001",
+    "result": "FOUND",
+    "email": "sj.park@naver.com",
+    "phone": "+82 10-5837-9451",
+    "full_name": "Soo-jin Park",
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Status Live; Market: South Korea; language: Korean; email opt-in Yes; SMS opt-in No; last refreshed 15 Sep 2026 23:40 UTC."
+   }
+  ]
+ }
+}

@@ -205,22 +205,51 @@ def load_image_extractions():
     return found
 
 
-def parse_image(entry, fid, captured):
-    records = [_rec(fid, captured, f"image:{entry['producer']}", dict(r))
-               for r in entry["records"] if r.get("resource_id")]
+CATALOG_ALIAS_RE = re.compile(r"linked (\w+?_\d+) \(([^)]+)\)")
+DIRECT_IDENTIFIERS = ("email", "phone", "full_name")
+
+
+def catalog_aliases(dataset):
+    """Display reference -> resource id, from catalog rows like
+    'Data catalog linked tombstone_17 (user_17) to ...'; only unambiguous aliases."""
+    seen = defaultdict(set)
+    with open(dataset / "system_activity.csv", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if row["event_type"] == "LINK_RESOURCE_IDENTITY":
+                for rid, alias in CATALOG_ALIAS_RE.findall(row["details"]):
+                    if alias != rid:
+                        seen[alias].add(rid)
+    return {alias: rids.pop() for alias, rids in seen.items() if len(rids) == 1}
+
+
+def parse_image(entry, fid, captured, aliases):
+    records = []
+    for r in entry["records"]:
+        fields = dict(r)
+        if not fields.get("resource_id"):
+            # the screen prints only a reference (e.g. user_17): use the catalog's alias for it
+            ref = fields.get("subject_reference") or fields.get("customer_reference")
+            if ref not in aliases:
+                continue
+            fields["resource_id"], fields["resource_id_source"] = aliases[ref], f"catalog alias of {ref}"
+        if fields.get("result") == "FOUND" and not any(fields.get(k) for k in DIRECT_IDENTIFIERS):
+            # listed without its contents: proves the record exists and who it belongs to,
+            # but PII that the screen does not show is not evidence the PII was removed
+            fields["_contents_not_shown"] = True
+        records.append(_rec(fid, captured, f"image:{entry['producer']}", fields))
     return records, {}
 
 
 def load_evidence(dataset):
     """Return (records, coverage, skipped) for every manifest file."""
     records, coverage, skipped = [], {}, []
-    images = load_image_extractions()
+    images, aliases = load_image_extractions(), catalog_aliases(dataset)
     with open(dataset / "evidence_files.csv", encoding="utf-8") as f:
         manifest = list(csv.DictReader(f))
     for row in manifest:
         path = dataset / row["file_path"]
         if row["file_id"] in images:
-            recs, cov = parse_image(images[row["file_id"]], row["file_id"], row["captured_at"])
+            recs, cov = parse_image(images[row["file_id"]], row["file_id"], row["captured_at"], aliases)
             records += recs
             continue
         parser = PARSERS.get(path.suffix)

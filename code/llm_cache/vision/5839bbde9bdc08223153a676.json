@@ -1,0 +1,80 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1415,
+  "output_tokens": 2512,
+  "total_tokens": 3927,
+  "seconds": 199.91
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": "audit_record_003",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Account closure recorded at 25 Aug 04:03 (2026-08-25T04:03:00Z) by Automated workflow"
+   },
+   {
+    "resource_id": "audit_record_002",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Session revoked at 25 Aug 03:21 by Security system"
+   },
+   {
+    "resource_id": "audit_record_001",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Recovery challenge completed at 24 Aug 16:14 by User (self)"
+   },
+   {
+    "resource_id": "audit_record_006",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Email change confirmed at 22 Aug 11:27 by User (self)"
+   },
+   {
+    "resource_id": "audit_record_005",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Login from new device at 20 Aug 09:42 by User (self)"
+   },
+   {
+    "resource_id": "audit_record_004",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Password changed at 18 Aug 14:05 by User (self)"
+   }
+  ]
+ }
+}

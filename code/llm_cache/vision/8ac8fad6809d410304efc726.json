@@ -1,0 +1,36 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1389,
+  "output_tokens": 5199,
+  "total_tokens": 6588,
+  "seconds": 213.85
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": "data_flow_1121",
+    "result": "ACTIVE",
+    "email": "jain.aditi@gmail.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": "jain.aditi@gmail.com",
+    "note": "Continuous sync to customer_analytics_warehouse; status Healthy, 1,284 events/hour, last contact 07:59:42"
+   },
+   {
+    "resource_id": "data_flow_9846",
+    "result": "ACTIVE",
+    "email": "lucia-torres@gmail.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": "lucia-torres@gmail.com",
+    "note": "Continuous sync to customer_analytics_warehouse; 842 events/hour, last contact 07:59:36"
+   }
+  ]
+ }
+}

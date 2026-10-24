@@ -52,14 +52,24 @@ MODEL_SCHEMA = {
 
 def model_opinions(requests, run_id=None, batch=50):
     """case_id -> (decision, reason) from Gemini, in batches. Empty if not configured."""
-    from llm import ask_json, configured
+    from llm import ask_json_many, configured
     if not configured():
         return {}
-    out = {}
+    jobs = []
     for i in range(0, len(requests), batch):
         chunk = [{"case_id": r["case_id"], "request_text": r["request_text"]} for r in requests[i:i + batch]]
-        answer = ask_json("intent", MODEL_PROMPT + json.dumps(chunk, ensure_ascii=False), MODEL_SCHEMA, run_id=run_id)
+        jobs.append({"task": "intent", "prompt": MODEL_PROMPT + json.dumps(chunk, ensure_ascii=False),
+                     "schema": MODEL_SCHEMA, "run_id": run_id})
+    out, failed = {}, []
+    for job, answer in zip(jobs, ask_json_many(jobs)):  # independent batches run concurrently
+        if isinstance(answer, Exception):
+            failed.append(str(answer)[:120])
+            continue
         out.update({d["case_id"]: (d["decision"], d["reason"]) for d in answer["decisions"]})
+    if failed:
+        # the model is a second opinion: when it is unavailable the rules still decide
+        print(f"intent: model unavailable for {len(failed)}/{len(jobs)} batches; rules decide those cases. "
+              f"First error: {failed[0]}")
     return out
 
 

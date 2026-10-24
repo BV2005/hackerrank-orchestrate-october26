@@ -310,7 +310,20 @@ def build_rows(requests):
 
         for rid in sorted(mine):
             system = system_of(rid)
-            recs = [r for r in by_resource.get(rid, []) if r["captured_at"] <= cutoff]
+            # category is a static property, so read it from every capture of the record
+            category = category_of(rid, by_resource.get(rid, []))
+            evidence_links = [v for v in mine[rid] if "@evidence_" in v and not v.startswith("ref:")]
+            if (category in OLD_ID_ONLY_CATEGORIES and evidence_links
+                    and all(v.startswith("old_") for v in evidence_links)):
+                # tied to the subject only through identifiers they no longer hold: a
+                # leftover secondary identifier (rule 02), not a record to redact or anonymize
+                category = "SECONDARY_IDENTIFIER"
+            rule = RULES.get(category, {})
+            recs = [r for r in by_resource.get(rid, []) if r["captured_at"] <= cutoff
+                    # a screen listing a record without its contents says nothing about
+                    # whether its PII was redacted or anonymized
+                    and not (r["fields"].get("_contents_not_shown")
+                             and rule.get("required_action") in ("REDACT", "ANONYMIZE"))]
             obs = [(r["captured_at"], r["file_id"], r["container"], observed_state(r, uid, ids)) for r in recs]
             for (fid, container), (captured, systems) in coverage.items():
                 if captured <= cutoff and system in systems and rid not in in_container[(fid, container)]:
@@ -321,15 +334,6 @@ def build_rows(requests):
             latest = [o for o in explicit if o[0] == explicit[-1][0]]
             # within the latest capture any surviving copy (e.g. a replica) wins over absence
             pick = next((o for o in latest if not o[3].startswith("ABSENT")), latest[0]) if latest else None
-            # category is a static property, so read it from every capture of the record
-            category = category_of(rid, by_resource.get(rid, []))
-            evidence_links = [v for v in mine[rid] if "@evidence_" in v and not v.startswith("ref:")]
-            if (category in OLD_ID_ONLY_CATEGORIES and evidence_links
-                    and all(v.startswith("old_") for v in evidence_links)):
-                # tied to the subject only through identifiers they no longer hold: a
-                # leftover secondary identifier (rule 02), not a record to redact or anonymize
-                category = "SECONDARY_IDENTIFIER"
-            rule = RULES.get(category, {})
             if pick and pick[2] == "omitted" and rule.get("required_action") == "RETAIN":
                 pick = None  # scoped dumps omitting a retained record do not prove it was deleted
             # catalog link rows are ownership facts, not claims about the resource's state

@@ -1,0 +1,25 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1403,
+  "output_tokens": 1641,
+  "total_tokens": 3044,
+  "seconds": 125.74
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": "support_1034",
+    "result": "FOUND",
+    "email": "kagyeman8947@fastmail.com",
+    "phone": null,
+    "full_name": "Kofi Agyeman",
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Support ticket CS-5034 Where is my delivery? assigned to Maya Chen with normal priority, SLA 01:42, regarding order ORD-20265034."
+   }
+  ]
+ }
+}

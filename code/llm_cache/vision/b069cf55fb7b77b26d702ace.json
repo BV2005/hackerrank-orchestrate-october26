@@ -1,0 +1,58 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1389,
+  "output_tokens": 1976,
+  "total_tokens": 3365,
+  "seconds": 110.22
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": "backup_9291",
+    "result": "FOUND",
+    "email": "bluepeakco@outlook.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Region ap-southeast-1, created 26 Apr 02:00, size 102.3 GB, AES-256, Tier Archive"
+   },
+   {
+    "resource_id": "backup_9288",
+    "result": "FOUND",
+    "email": "miller.logistics@company.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Region us-west-2, created 26 Apr 02:00, size 67.1 GB, AES-256, Tier Archive"
+   },
+   {
+    "resource_id": "backup_9287",
+    "result": "FOUND",
+    "email": "areed1433@gmail.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Region eu-west-1, created 26 Apr 2026 02:00 UTC, size 84.7 GB, AES-256, retention end 26 Jul 2026"
+   },
+   {
+    "resource_id": "backup_9286",
+    "result": "FOUND",
+    "email": "summit-retail@company.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Region us-east-1, created 26 Apr 02:00, size 91.4 GB, AES-256, Tier Archive"
+   }
+  ]
+ }
+}

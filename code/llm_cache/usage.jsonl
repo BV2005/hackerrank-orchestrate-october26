@@ -1,0 +1,135 @@
+{"run_id": "vision-dev-1", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1403, "output_tokens": 1572, "total_tokens": 2975, "seconds": 268.93}
+{"run_id": "vision-dev-1", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1415, "output_tokens": 1615, "total_tokens": 3030, "seconds": 240.16}
+{"run_id": "vision-dev-1", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1389, "output_tokens": 5199, "total_tokens": 6588, "seconds": 213.85}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1676, "output_tokens": 4072, "total_tokens": 5748, "seconds": 212.15}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1572, "total_tokens": 2975, "seconds": 268.93}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1615, "total_tokens": 3030, "seconds": 240.16}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 5199, "total_tokens": 6588, "seconds": 213.85}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1415, "output_tokens": 1144, "total_tokens": 2559, "seconds": 104.72}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1389, "output_tokens": 1976, "total_tokens": 3365, "seconds": 110.22}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1389, "output_tokens": 1188, "total_tokens": 2577, "seconds": 111.27}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1403, "output_tokens": 1641, "total_tokens": 3044, "seconds": 125.74}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1415, "output_tokens": 2510, "total_tokens": 3925, "seconds": 175.29}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1415, "output_tokens": 2512, "total_tokens": 3927, "seconds": 199.91}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1415, "output_tokens": 1272, "total_tokens": 2687, "seconds": 231.55}
+{"run_id": "vision-dev-2", "task": "vision", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 1389, "output_tokens": 2549, "total_tokens": 3938, "seconds": 257.76}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1615, "total_tokens": 3030, "seconds": 240.16}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1572, "total_tokens": 2975, "seconds": 268.93}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 5199, "total_tokens": 6588, "seconds": 213.85}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1188, "total_tokens": 2577, "seconds": 111.27}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1144, "total_tokens": 2559, "seconds": 104.72}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1641, "total_tokens": 3044, "seconds": 125.74}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1976, "total_tokens": 3365, "seconds": 110.22}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2512, "total_tokens": 3927, "seconds": 199.91}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2510, "total_tokens": 3925, "seconds": 175.29}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 2549, "total_tokens": 3938, "seconds": 257.76}
+{"run_id": "run-20261024T154052Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1272, "total_tokens": 2687, "seconds": 231.55}
+{"run_id": "run-20261024T154052Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1615, "total_tokens": 3030, "seconds": 240.16}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1572, "total_tokens": 2975, "seconds": 268.93}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 5199, "total_tokens": 6588, "seconds": 213.85}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1188, "total_tokens": 2577, "seconds": 111.27}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1144, "total_tokens": 2559, "seconds": 104.72}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1641, "total_tokens": 3044, "seconds": 125.74}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1976, "total_tokens": 3365, "seconds": 110.22}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2510, "total_tokens": 3925, "seconds": 175.29}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2512, "total_tokens": 3927, "seconds": 199.91}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1272, "total_tokens": 2687, "seconds": 231.55}
+{"run_id": "run-20261024T154730Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 2549, "total_tokens": 3938, "seconds": 257.76}
+{"run_id": "run-20261024T154730Z", "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1572, "total_tokens": 2975, "seconds": 268.93}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 5199, "total_tokens": 6588, "seconds": 213.85}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1615, "total_tokens": 3030, "seconds": 240.16}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1188, "total_tokens": 2577, "seconds": 111.27}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1144, "total_tokens": 2559, "seconds": 104.72}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1641, "total_tokens": 3044, "seconds": 125.74}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1976, "total_tokens": 3365, "seconds": 110.22}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2512, "total_tokens": 3927, "seconds": 199.91}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2510, "total_tokens": 3925, "seconds": 175.29}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 2549, "total_tokens": 3938, "seconds": 257.76}
+{"run_id": "run-20261024T155413Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1272, "total_tokens": 2687, "seconds": 231.55}
+{"run_id": "run-20261024T155413Z", "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1615, "total_tokens": 3030, "seconds": 240.16}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1572, "total_tokens": 2975, "seconds": 268.93}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1188, "total_tokens": 2577, "seconds": 111.27}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 5199, "total_tokens": 6588, "seconds": 213.85}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1144, "total_tokens": 2559, "seconds": 104.72}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1641, "total_tokens": 3044, "seconds": 125.74}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1976, "total_tokens": 3365, "seconds": 110.22}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2512, "total_tokens": 3927, "seconds": 199.91}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2510, "total_tokens": 3925, "seconds": 175.29}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1272, "total_tokens": 2687, "seconds": 231.55}
+{"run_id": "run-20261024T155430Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 2549, "total_tokens": 3938, "seconds": 257.76}
+{"run_id": "run-20261024T155430Z", "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1676, "output_tokens": 4072, "total_tokens": 5748, "seconds": 212.15}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1676, "output_tokens": 4072, "total_tokens": 5748, "seconds": 212.15}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1676, "output_tokens": 4072, "total_tokens": 5748, "seconds": 212.15}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1615, "total_tokens": 3030, "seconds": 240.16}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1572, "total_tokens": 2975, "seconds": 268.93}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 5199, "total_tokens": 6588, "seconds": 213.85}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1188, "total_tokens": 2577, "seconds": 111.27}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1144, "total_tokens": 2559, "seconds": 104.72}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1641, "total_tokens": 3044, "seconds": 125.74}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1976, "total_tokens": 3365, "seconds": 110.22}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2510, "total_tokens": 3925, "seconds": 175.29}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2512, "total_tokens": 3927, "seconds": 199.91}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 2549, "total_tokens": 3938, "seconds": 257.76}
+{"run_id": "run-20261024T155729Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1272, "total_tokens": 2687, "seconds": 231.55}
+{"run_id": "run-20261024T155729Z", "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1676, "output_tokens": 4072, "total_tokens": 5748, "seconds": 212.15}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1615, "total_tokens": 3030, "seconds": 240.16}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1572, "total_tokens": 2975, "seconds": 268.93}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 5199, "total_tokens": 6588, "seconds": 213.85}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1188, "total_tokens": 2577, "seconds": 111.27}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1144, "total_tokens": 2559, "seconds": 104.72}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 1976, "total_tokens": 3365, "seconds": 110.22}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2512, "total_tokens": 3927, "seconds": 199.91}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1403, "output_tokens": 1641, "total_tokens": 3044, "seconds": 125.74}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 2510, "total_tokens": 3925, "seconds": 175.29}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1389, "output_tokens": 2549, "total_tokens": 3938, "seconds": 257.76}
+{"run_id": "run-20261024T155821Z", "task": "vision", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1415, "output_tokens": 1272, "total_tokens": 2687, "seconds": 231.55}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.86, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.87, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.87, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 1.04, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.33, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.35, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.38, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.35, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.32, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": "run-20261024T155821Z", "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.35, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 1676, "output_tokens": 4072, "total_tokens": 5748, "seconds": 212.15}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.83, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.3, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.34, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.32, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.38, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.38, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.45, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.52, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.52, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.38, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.38, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.3, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.32, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.29, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.39, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": true, "input_tokens": 2838, "output_tokens": 3065, "total_tokens": 5903, "seconds": 228.42}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.37, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.38, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.37, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.36, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.37, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.38, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.38, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.39, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.3, "failed": "429 RESOURCE_EXHAUSTED"}
+{"run_id": null, "task": "intent", "model": "gemini-3.8-flash", "cached": false, "input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "seconds": 0.33, "failed": "429 RESOURCE_EXHAUSTED"}

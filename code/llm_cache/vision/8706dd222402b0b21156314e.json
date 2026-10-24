@@ -1,0 +1,102 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1389,
+  "output_tokens": 2549,
+  "total_tokens": 3938,
+  "seconds": 257.76
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File delivery_confirmation_19.pdf, 684 KB, modified 12 Feb 2026 18:42 UTC, version v3, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File delivery_confirmation_20.pdf, 712 KB, modified 11 Feb 14:17, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File return_label_4821.pdf, 203 KB, modified 10 Feb 09:33, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File return_label_4876.pdf, 198 KB, modified 11 Feb 16:05, version v2, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File invoice_NS-10493.pdf, 318 KB, modified 10 Feb 11:21, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File parcel_damage_7713.jpg, 2.4 MB, modified 12 Feb 10:08, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File customer_export_2026-02-10.zip, 128 MB, modified 10 Feb 23:14, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File customer_export_2026-02-12.zip, 131 MB, modified 12 Feb 21:56, version v1, Standard storage."
+   }
+  ]
+ }
+}

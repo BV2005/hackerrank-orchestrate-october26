@@ -1,0 +1,25 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1415,
+  "output_tokens": 2510,
+  "total_tokens": 3925,
+  "seconds": 175.29
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_17",
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Customer key retained reference in Account Platform (eu-west), created 11 Jan 2024 08:42 UTC and updated 10 Mar 2026 07:18 UTC with 4 active linked records."
+   }
+  ]
+ }
+}

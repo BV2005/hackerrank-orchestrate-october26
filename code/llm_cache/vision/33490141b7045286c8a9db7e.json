@@ -1,0 +1,36 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1415,
+  "output_tokens": 1615,
+  "total_tokens": 3030,
+  "seconds": 240.16
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": "search_428",
+    "result": "FOUND",
+    "email": "g.silva76@gmail.com",
+    "phone": null,
+    "full_name": "Gabriel Silva",
+    "customer_reference": "user_13",
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Document in index customer_directory_v3, score 9.84, indexed at 2026-09-01T05:58:21Z"
+   },
+   {
+    "resource_id": "search_1874",
+    "result": "FOUND",
+    "email": "g.silva76.jr@gmail.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Score 4.12, last indexed at 05:55:03 UTC"
+   }
+  ]
+ }
+}

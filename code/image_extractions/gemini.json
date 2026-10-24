@@ -1,0 +1,421 @@
+{
+ "_about": "Records extracted from the PNG screenshots by Gemini via code/vision.py.",
+ "evidence_04": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/account_admin_console_20260926.png",
+  "records": [
+   {
+    "resource_id": "account_5762",
+    "result": "FOUND",
+    "email": "haruka.s1838@zoho.com",
+    "phone": "+81 90 7610 2507",
+    "full_name": "Haruka Sato",
+    "customer_reference": "user_11",
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Silver loyalty tier; signup channel mobile_app; market JP; preferred language Japanese; member since 12 Jan 2024"
+   },
+   {
+    "resource_id": "support_9538",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": "Haruka Sato",
+    "customer_reference": "user_11",
+    "subject_reference": "CS-8538",
+    "subject_selector": null,
+    "note": "Support case CS-8538 created 28 Aug; agent responded 22 Sep; customer replied 24 Sep"
+   }
+  ]
+ },
+ "evidence_09": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/search_index_inspector_20260901.png",
+  "records": [
+   {
+    "resource_id": "search_428",
+    "result": "FOUND",
+    "email": "g.silva76@gmail.com",
+    "phone": null,
+    "full_name": "Gabriel Silva",
+    "customer_reference": "user_13",
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Document in index customer_directory_v3, score 9.84, indexed at 2026-09-01T05:58:21Z"
+   },
+   {
+    "resource_id": "search_1874",
+    "result": "FOUND",
+    "email": "g.silva76.jr@gmail.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Score 4.12, last indexed at 05:55:03 UTC"
+   }
+  ]
+ },
+ "evidence_14": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/connector_management_console_20260807.png",
+  "records": [
+   {
+    "resource_id": "data_flow_1121",
+    "result": "ACTIVE",
+    "email": "jain.aditi@gmail.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": "jain.aditi@gmail.com",
+    "note": "Continuous sync to customer_analytics_warehouse; status Healthy, 1,284 events/hour, last contact 07:59:42"
+   },
+   {
+    "resource_id": "data_flow_9846",
+    "result": "ACTIVE",
+    "email": "lucia-torres@gmail.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": "lucia-torres@gmail.com",
+    "note": "Continuous sync to customer_analytics_warehouse; 842 events/hour, last contact 07:59:36"
+   }
+  ]
+ },
+ "evidence_19": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/analytics_profile_view_20260713.png",
+  "records": [
+   {
+    "resource_id": "analytics_7438",
+    "result": "IDENTIFIABLE",
+    "email": "darwish.omar@icloud.com",
+    "phone": null,
+    "full_name": "Omar Darwish",
+    "customer_reference": "user_20",
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Pulse Analytics profile; returning shopper in AE market, 12 sessions, last activity 13 Jul 2026 14:22 UTC."
+   }
+  ]
+ },
+ "evidence_23": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/customer_export_console_20260618.png",
+  "records": [
+   {
+    "resource_id": "export_1261",
+    "result": "FOUND",
+    "email": "marcus.lee@northstar.shop",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Filename customer_export_1261.zip, status Collecting, created 20 Jun 14:18 UTC"
+   },
+   {
+    "resource_id": "export_1260",
+    "result": "FOUND",
+    "email": "ingrid.dahl@outlook.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Filename customer_export_1260.zip, status Ready, created 18 Jun 2026 06:42 UTC, expires 25 Jun 2026, size 18.4 MB"
+   },
+   {
+    "resource_id": "export_1259",
+    "result": "FOUND",
+    "email": "sara.kim@northstar.shop",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Filename customer_export_1259.zip, status Packaging, created 17 Jun 11:03 UTC"
+   },
+   {
+    "resource_id": "export_1258",
+    "result": "FOUND",
+    "email": "daniel.park@northstar.shop",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Filename customer_export_1258.zip, status Ready, created 16 Jun 09:27 UTC"
+   }
+  ]
+ },
+ "evidence_28": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/support_ticket_console_20260524.png",
+  "records": [
+   {
+    "resource_id": "support_1034",
+    "result": "FOUND",
+    "email": "kagyeman8947@fastmail.com",
+    "phone": null,
+    "full_name": "Kofi Agyeman",
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Support ticket CS-5034 Where is my delivery? assigned to Maya Chen with normal priority, SLA 01:42, regarding order ORD-20265034."
+   }
+  ]
+ },
+ "evidence_32": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/backup_restore_console_20260429.png",
+  "records": [
+   {
+    "resource_id": "backup_9291",
+    "result": "FOUND",
+    "email": "bluepeakco@outlook.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Region ap-southeast-1, created 26 Apr 02:00, size 102.3 GB, AES-256, Tier Archive"
+   },
+   {
+    "resource_id": "backup_9288",
+    "result": "FOUND",
+    "email": "miller.logistics@company.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Region us-west-2, created 26 Apr 02:00, size 67.1 GB, AES-256, Tier Archive"
+   },
+   {
+    "resource_id": "backup_9287",
+    "result": "FOUND",
+    "email": "areed1433@gmail.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Region eu-west-1, created 26 Apr 2026 02:00 UTC, size 84.7 GB, AES-256, retention end 26 Jul 2026"
+   },
+   {
+    "resource_id": "backup_9286",
+    "result": "FOUND",
+    "email": "summit-retail@company.com",
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Region us-east-1, created 26 Apr 02:00, size 91.4 GB, AES-256, Tier Archive"
+   }
+  ]
+ },
+ "evidence_37": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/security_audit_explorer_20260905.png",
+  "records": [
+   {
+    "resource_id": "audit_record_003",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Account closure recorded at 25 Aug 04:03 (2026-08-25T04:03:00Z) by Automated workflow"
+   },
+   {
+    "resource_id": "audit_record_002",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Session revoked at 25 Aug 03:21 by Security system"
+   },
+   {
+    "resource_id": "audit_record_001",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Recovery challenge completed at 24 Aug 16:14 by User (self)"
+   },
+   {
+    "resource_id": "audit_record_006",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Email change confirmed at 22 Aug 11:27 by User (self)"
+   },
+   {
+    "resource_id": "audit_record_005",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Login from new device at 20 Aug 09:42 by User (self)"
+   },
+   {
+    "resource_id": "audit_record_004",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_03",
+    "subject_reference": "user_03",
+    "subject_selector": null,
+    "note": "Password changed at 18 Aug 14:05 by User (self)"
+   }
+  ]
+ },
+ "evidence_42": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/deleted_account_reference_20260310.png",
+  "records": [
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": "user_17",
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Customer key retained reference in Account Platform (eu-west), created 11 Jan 2024 08:42 UTC and updated 10 Mar 2026 07:18 UTC with 4 active linked records."
+   }
+  ]
+ },
+ "evidence_46": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/object_storage_browser_20260213.png",
+  "records": [
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File delivery_confirmation_19.pdf, 684 KB, modified 12 Feb 2026 18:42 UTC, version v3, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File delivery_confirmation_20.pdf, 712 KB, modified 11 Feb 14:17, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File return_label_4821.pdf, 203 KB, modified 10 Feb 09:33, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File return_label_4876.pdf, 198 KB, modified 11 Feb 16:05, version v2, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File invoice_NS-10493.pdf, 318 KB, modified 10 Feb 11:21, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File parcel_damage_7713.jpg, 2.4 MB, modified 12 Feb 10:08, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File customer_export_2026-02-10.zip, 128 MB, modified 10 Feb 23:14, version v1, Standard storage."
+   },
+   {
+    "resource_id": null,
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": null,
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "File customer_export_2026-02-12.zip, 131 MB, modified 12 Feb 21:56, version v1, Standard storage."
+   }
+  ]
+ },
+ "evidence_60": {
+  "producer": "gemini-vision",
+  "screen": "evidence/images/marketing_profile_console.png",
+  "records": [
+   {
+    "resource_id": "marketing_001",
+    "result": "FOUND",
+    "email": "sj.park@naver.com",
+    "phone": "+82 10-5837-9451",
+    "full_name": "Soo-jin Park",
+    "customer_reference": null,
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Status Live; Market: South Korea; language: Korean; email opt-in Yes; SMS opt-in No; last refreshed 15 Sep 2026 23:40 UTC."
+   }
+  ]
+ }
+}

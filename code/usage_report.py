@@ -19,6 +19,8 @@ def write_usage_report(run_id, n_requests):
     price_in, price_out = setting("GEMINI_PRICE_INPUT_PER_MTOK"), setting("GEMINI_PRICE_OUTPUT_PER_MTOK")
     priced = price_in is not None and price_out is not None
 
+    failures = [e for e in entries if e.get("failed")]
+    entries = [e for e in entries if not e.get("failed")]
     groups = defaultdict(lambda: defaultdict(int))
     for e in entries:
         for key in ((e["model"], e["task"]), (e["model"], "all tasks"), ("all models", "all tasks")):
@@ -58,5 +60,15 @@ def write_usage_report(run_id, n_requests):
         if not priced:
             lines += ["Cost: set `GEMINI_PRICE_INPUT_PER_MTOK` / `GEMINI_PRICE_OUTPUT_PER_MTOK` and re-run "
                       "to fill in the estimate.", ""]
+    if failures:
+        why = defaultdict(int)
+        for e in failures:
+            why[(e["task"], e["failed"])] += 1
+        lines += ["## Calls the API refused", "",
+                  "Refused calls return no answer and use no tokens; the pipeline fell back as described "
+                  "(intent: the rule classifier decides; vision: the last complete extraction is kept).", "",
+                  "| Task | Error | Calls |", "|---|---|---|"]
+        lines += [f"| {task} | {err} | {n} |" for (task, err), n in sorted(why.items())]
+        lines.append("")
     REPORT.write_text("\n".join(lines), encoding="utf-8")
     return f"usage report: {REPORT} ({len(entries)} model calls in {run_id})"

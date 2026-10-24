@@ -1,0 +1,36 @@
+{
+ "task": "vision",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1403,
+  "output_tokens": 1572,
+  "total_tokens": 2975,
+  "seconds": 268.93
+ },
+ "answer": {
+  "records": [
+   {
+    "resource_id": "account_5762",
+    "result": "FOUND",
+    "email": "haruka.s1838@zoho.com",
+    "phone": "+81 90 7610 2507",
+    "full_name": "Haruka Sato",
+    "customer_reference": "user_11",
+    "subject_reference": null,
+    "subject_selector": null,
+    "note": "Silver loyalty tier; signup channel mobile_app; market JP; preferred language Japanese; member since 12 Jan 2024"
+   },
+   {
+    "resource_id": "support_9538",
+    "result": "FOUND",
+    "email": null,
+    "phone": null,
+    "full_name": "Haruka Sato",
+    "customer_reference": "user_11",
+    "subject_reference": "CS-8538",
+    "subject_selector": null,
+    "note": "Support case CS-8538 created 28 Aug; agent responded 22 Sep; customer replied 24 Sep"
+   }
+  ]
+ }
+}

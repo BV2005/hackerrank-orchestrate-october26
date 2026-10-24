@@ -1,0 +1,174 @@
+{
+ "task": "intent",
+ "model": "gemini-3.8-flash",
+ "usage": {
+  "input_tokens": 1676,
+  "output_tokens": 4072,
+  "total_tokens": 5748,
+  "seconds": 212.15
+ },
+ "answer": {
+  "decisions": [
+   {
+    "case_id": "case_01",
+    "decision": "deletion",
+    "reason": "The user is requesting account closure and the removal of their profile and personal details."
+   },
+   {
+    "case_id": "case_02",
+    "decision": "deletion",
+    "reason": "The user is asking to verify and finish the account deletion process following a previous error."
+   },
+   {
+    "case_id": "case_03",
+    "decision": "deletion",
+    "reason": "The user is requesting the permanent deletion of the account associated with their email address."
+   },
+   {
+    "case_id": "case_04",
+    "decision": "deletion",
+    "reason": "The user is asking to delete their account and remove identifiable analytics data."
+   },
+   {
+    "case_id": "case_05",
+    "decision": "deletion",
+    "reason": "The user is requesting the removal of remaining copies of their profile after a prior deletion."
+   },
+   {
+    "case_id": "case_06",
+    "decision": "deletion",
+    "reason": "The user is asking to remove remaining search results corresponding to their deleted profile."
+   },
+   {
+    "case_id": "case_07",
+    "decision": "deletion",
+    "reason": "The user is asking to delete their account along with a previously submitted identity document."
+   },
+   {
+    "case_id": "case_08",
+    "decision": "deletion",
+    "reason": "The user is requesting the deletion of a remaining data export file after closing their account."
+   },
+   {
+    "case_id": "case_09",
+    "decision": "deletion",
+    "reason": "The user is requesting the permanent deletion of the account associated with their email address."
+   },
+   {
+    "case_id": "case_10",
+    "decision": "deletion",
+    "reason": "The user is requesting the removal of personal records linked to their previous and current email addresses."
+   },
+   {
+    "case_id": "case_11",
+    "decision": "deletion",
+    "reason": "The user is requesting the erasure of the account and any associated copies."
+   },
+   {
+    "case_id": "case_12",
+    "decision": "deletion",
+    "reason": "The user is asking to verify that no remaining data tied to their old email was left behind after deletion."
+   },
+   {
+    "case_id": "case_13",
+    "decision": "deletion",
+    "reason": "The user is requesting account closure and the deletion of associated personal data."
+   },
+   {
+    "case_id": "case_14",
+    "decision": "deletion",
+    "reason": "The user is requesting the complete deletion of their account and verification of identifiers."
+   },
+   {
+    "case_id": "case_15",
+    "decision": "deletion",
+    "reason": "The user is asking to completely close the account and remove remaining active data flows."
+   },
+   {
+    "case_id": "case_16",
+    "decision": "deletion",
+    "reason": "The user is explicitly requesting permanent account deletion across current and earlier identifiers."
+   },
+   {
+    "case_id": "case_17",
+    "decision": "deletion",
+    "reason": "The user is asking for permanent account closure and the prevention of personal profile restoration from backups."
+   },
+   {
+    "case_id": "case_18",
+    "decision": "deletion",
+    "reason": "The user is asking to remove their account and associated personal information."
+   },
+   {
+    "case_id": "case_19",
+    "decision": "deletion",
+    "reason": "The user is asking to delete their profile and remove their personal details from support records."
+   },
+   {
+    "case_id": "case_20",
+    "decision": "deletion",
+    "reason": "The user is requesting permanent account deletion and confirmation upon completion."
+   },
+   {
+    "case_id": "case_21",
+    "decision": "deletion",
+    "reason": "The user is asking to confirm that their deleted profile is gone and retained data is minimized."
+   },
+   {
+    "case_id": "case_22",
+    "decision": "deletion",
+    "reason": "The user is requesting the erasure of the account linked to their email address."
+   },
+   {
+    "case_id": "case_23",
+    "decision": "deletion",
+    "reason": "The user is requesting deletion of their account, data archive, and associated search results."
+   },
+   {
+    "case_id": "case_24",
+    "decision": "deletion",
+    "reason": "The user is asking to investigate and finish an incomplete deletion of their account and search results."
+   },
+   {
+    "case_id": "case_25",
+    "decision": "deletion",
+    "reason": "The user is asking to confirm whether account and identifiable analytics data have been deleted after a failure report."
+   },
+   {
+    "case_id": "case_26",
+    "decision": "deletion",
+    "reason": "The user is asking to confirm that their profile has been deleted and cannot be identified."
+   },
+   {
+    "case_id": "case_27",
+    "decision": "deletion",
+    "reason": "The user is asking to audit and confirm the complete removal of their account."
+   },
+   {
+    "case_id": "case_28",
+    "decision": "deletion",
+    "reason": "The user is asking to verify that their account deletion was completed."
+   },
+   {
+    "case_id": "case_29",
+    "decision": "deletion",
+    "reason": "The user is requesting the removal of records across past and current email addresses."
+   },
+   {
+    "case_id": "case_30",
+    "decision": "deletion",
+    "reason": "The user is asking to resolve remaining traces and finalize the deletion of their account across systems."
+   },
+   {
+    "case_id": "case_31",
+    "decision": "deletion",
+    "reason": "The user is requesting the removal of their personal name and contact details from the account."
+   },
+   {
+    "case_id": "case_32",
+    "decision": "deletion",
+    "reason": "The user is asking to remove personal details remaining on a deleted-account record."
+   }
+  ]
+ }
+}
